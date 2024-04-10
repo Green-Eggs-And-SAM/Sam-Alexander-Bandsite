@@ -46,21 +46,43 @@ img {
 .page-header {
     background-color: black;
     color: white;
+    display: block;
+
+    @include desktop-tablet {
+        height: 100%;
+    }
 
     &__wrapper {
         text-align: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        @include desktop-tablet {
+            align-items: baseline;
+            flex-direction: row;
+            height: 100%;
+            margin-bottom: 0;
+        }
+        justify-content: center;
         width: 100%;
+        // @include desktop-tablet {
+        //     flex-direction: row;
+        // }
     }
 
     &__nav {
         display: flex;
-        flex-direction: row;
+
+        width: 100%;
         justify-content: space-around;
+        // height: 100%;
+        @include desktop-tablet {
+            // padding-bottom: 0;
+        }
 
         &--link {
             width: 100%;
+
             margin-bottom: 0;
             padding-bottom: 16px;
         }
@@ -68,6 +90,9 @@ img {
 
     &__active {
         border-bottom: 4px solid white;
+        @include desktop-tablet {
+            bottom: 0;
+        }
     }
 }
 
@@ -88,6 +113,38 @@ img {
     padding: 24px;
 }
 
-.Photo-Gallery {
+.photo-gallery {
     padding: 24px;
+
+    &__photos img {
+        @include desktop-tablet {
+            width: 32%;
+        }
+    }
+}
+
+.page-footer {
+    color: white;
+    background-color: $bandsite-black;
+    width: 100%;
+    &__social-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        @include desktop-tablet {
+            flex-direction: row;
+        }
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        @include desktop-tablet {
+            flex-direction: row;
+        }
+    }
 }
