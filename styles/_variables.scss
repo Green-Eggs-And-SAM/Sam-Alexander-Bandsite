@@ -1,0 +1,17 @@
+$desktop-tablet-width: 768px;
+
+@mixin desktop-tablet {
+    @media (min-width: $desktop-tablet-width) {
+        @content;
+    }
+}
+
+//colors-primary
+$bandsite-black: #323232;
+$silver: #afafaf;
+$white: #fff;
+
+//colors-secondary
+$bandsite-dark-black: #000;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;

@@ -1,0 +1,75 @@
+// Desktop and Tables sizes
+
+@mixin Page-Header-Font__Desktop-Table {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+}
+
+@mixin Section-Header-Font__Desktop-Table {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+@mixin Subheader-Font__Desktop-Table {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+@mixin Body-Copy__Desktop-Table {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+@mixin Footer-Copy__Desktop-Table {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+@mixin Labels-Buttons__Desktop-Table {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+// Mobile sizes
+
+@mixin Page-Header-Font__Mobile {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin Section-Header-Font__Mobile {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin Subheader-Font__Mobile {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+@mixin Body-Copy__Mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin Footer-Copy__Mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin Labels-Buttons__Mobile {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+}

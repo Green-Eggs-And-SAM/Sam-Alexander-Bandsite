@@ -1,3 +1,93 @@
+@use './font-sizes' as *;
+@use './variables' as *;
+
 * {
     border: 1px dotted green;
+
+    box-sizing: border-box;
+} /*# sourceMappingURL=bio.css.map */
+
+body {
+    margin: 0;
+    //
+    font-family: Avenir;
+}
+main {
+}
+
+//Page Header
+h1 {
+    @include Page-Header-Font__Mobile;
+    @include desktop-tablet {
+        @include Page-Header-Font__Desktop-Table;
+    }
+}
+
+//Section Header
+h2 {
+    @include Section-Header-Font__Mobile;
+    @include desktop-tablet {
+        @include Section-Header-Font__Desktop-Table;
+    }
+}
+
+//Sub Header
+h3 {
+    @include Subheader-Font__Mobile;
+    @include desktop-tablet {
+        @include Subheader-Font__Desktop-Table;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.page-header {
+    background-color: black;
+    color: white;
+
+    &__wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        &--link {
+            width: 100%;
+            margin-bottom: 0;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__active {
+        border-bottom: 4px solid white;
+    }
+}
+
+.band {
+    padding: 0;
+    background-image: url('/assets/images/hero-bio.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    &__title {
+        padding: 24px;
+        color: white;
+        height: auto;
+    }
+}
+
+.About {
+    padding: 24px;
+}
+
+.Photo-Gallery {
+    padding: 24px;
 }
