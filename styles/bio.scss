@@ -2,7 +2,7 @@
 @use './variables' as *;
 
 * {
-    border: 1px dotted green;
+    // border: 1px dotted green;
 
     box-sizing: border-box;
 } /*# sourceMappingURL=bio.css.map */
@@ -62,6 +62,7 @@ img {
             flex-direction: row;
             height: 100%;
             margin-bottom: 0;
+            @include desktop-padding;
         }
         justify-content: center;
         width: 100%;
@@ -77,9 +78,8 @@ img {
         justify-content: space-around;
         // height: 100%;
         @include desktop-tablet {
-            // padding-bottom: 0;
+            height: 110px;
         }
-
         &--link {
             width: 100%;
 
@@ -101,24 +101,60 @@ img {
     background-image: url('/assets/images/hero-bio.jpg');
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 300px;
+    @include desktop-tablet {
+        height: 500px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &__title {
         padding: 24px;
         color: white;
         height: auto;
+        @include desktop-tablet {
+            @include desktop-padding;
+        }
     }
 }
 
-.About {
+.about {
     padding: 24px;
+    @include desktop-tablet {
+        @include desktop-padding;
+    }
+
+    &__narrow-margins {
+        @include desktop-tablet {
+            @include desktop-padding--narrow;
+        }
+    }
 }
 
 .photo-gallery {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    &__photos img {
+    @include desktop-tablet {
+        @include desktop-padding;
+    }
+
+    &__photos {
         @include desktop-tablet {
-            width: 32%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        & img {
+            margin: 1.7vw 0;
+            @include desktop-tablet {
+                width: 32%;
+                margin: 0.9vw 0;
+            }
         }
     }
 }
@@ -127,6 +163,10 @@ img {
     color: white;
     background-color: $bandsite-black;
     width: 100%;
+    padding: 24px;
+    @include desktop-tablet {
+        @include desktop-padding;
+    }
     &__social-logo {
         height: 50px;
         width: auto;
@@ -145,6 +185,7 @@ img {
         flex-direction: column;
         @include desktop-tablet {
             flex-direction: row;
+            justify-content: space-between;
         }
     }
 }

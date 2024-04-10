@@ -7,8 +7,13 @@ $desktop-tablet-width: 768px;
 }
 
 @mixin desktop-padding {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 72px;
+    padding-right: 72px;
+}
+
+@mixin desktop-padding--narrow {
+    padding-left: 56px;
+    padding-right: 56px;
 }
 
 //colors-primary
