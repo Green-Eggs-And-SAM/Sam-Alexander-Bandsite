@@ -57,6 +57,14 @@ img {
 @media (min-width: 768px) {
   .page-header {
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .page-header__title {
+    margin-right: 7vw;
   }
 }
 .page-header__wrapper {
@@ -70,11 +78,18 @@ img {
 @media (min-width: 768px) {
   .page-header__wrapper {
     align-items: baseline;
+    justify-content: flex-start;
     flex-direction: row;
     height: 100%;
     margin-bottom: 0;
     padding-left: 72px;
     padding-right: 72px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-header__wrapper {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 .page-header__nav {
@@ -84,13 +99,19 @@ img {
 }
 @media (min-width: 768px) {
   .page-header__nav {
-    height: 110px;
+    height: 55px;
+    width: auto;
   }
 }
 .page-header__nav--link {
   width: 100%;
   margin-bottom: 0;
   padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .page-header__nav--link {
+    margin: 0 3vw;
+  }
 }
 .page-header__active {
   border-bottom: 4px solid white;
@@ -127,6 +148,12 @@ img {
     padding-right: 72px;
   }
 }
+@media (min-width: 1200px) {
+  .band__title {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
 
 .about {
   padding: 24px;
@@ -137,10 +164,22 @@ img {
     padding-right: 72px;
   }
 }
+@media (min-width: 1200px) {
+  .about {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
 @media (min-width: 768px) {
   .about__narrow-margins {
     padding-left: 56px;
     padding-right: 56px;
+  }
+}
+@media (min-width: 1200px) {
+  .about__narrow-margins {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 
@@ -154,6 +193,12 @@ img {
   .photo-gallery {
     padding-left: 72px;
     padding-right: 72px;
+  }
+}
+@media (min-width: 1200px) {
+  .photo-gallery {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 @media (min-width: 768px) {
@@ -184,6 +229,12 @@ img {
   .page-footer {
     padding-left: 72px;
     padding-right: 72px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-footer {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 .page-footer__social-logo {

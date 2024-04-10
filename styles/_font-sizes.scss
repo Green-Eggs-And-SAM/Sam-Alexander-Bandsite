@@ -1,36 +1,36 @@
 // Desktop and Tables sizes
 
-@mixin Page-Header-Font__Desktop-Table {
+@mixin Page-Header-Font__Desktop-Tablet {
     font-size: 60px;
     line-height: 68px;
     font-weight: 700;
 }
 
-@mixin Section-Header-Font__Desktop-Table {
+@mixin Section-Header-Font__Desktop-Tablet {
     font-size: 36px;
     line-height: 44px;
     font-weight: 700;
 }
 
-@mixin Subheader-Font__Desktop-Table {
+@mixin Subheader-Font__Desktop-Tablet {
     font-size: 24px;
     line-height: 32px;
     font-weight: 600;
 }
 
-@mixin Body-Copy__Desktop-Table {
+@mixin Body-Copy__Desktop-Tablet {
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
 }
 
-@mixin Footer-Copy__Desktop-Table {
+@mixin Footer-Copy__Desktop-Tablet {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
 }
 
-@mixin Labels-Buttons__Desktop-Table {
+@mixin Labels-Buttons__Desktop-Tablet {
     font-size: 12px;
     line-height: 20px;
     font-weight: 700;

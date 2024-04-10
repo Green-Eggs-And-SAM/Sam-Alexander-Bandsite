@@ -18,24 +18,24 @@ main {
 //Page Header
 h1 {
     @include Page-Header-Font__Mobile;
-    @include desktop-tablet {
-        @include Page-Header-Font__Desktop-Table;
+    @include tablet {
+        @include Page-Header-Font__Desktop-Tablet;
     }
 }
 
 //Section Header
 h2 {
     @include Section-Header-Font__Mobile;
-    @include desktop-tablet {
-        @include Section-Header-Font__Desktop-Table;
+    @include tablet {
+        @include Section-Header-Font__Desktop-Tablet;
     }
 }
 
 //Sub Header
 h3 {
     @include Subheader-Font__Mobile;
-    @include desktop-tablet {
-        @include Subheader-Font__Desktop-Table;
+    @include tablet {
+        @include Subheader-Font__Desktop-Tablet;
     }
 }
 
@@ -48,8 +48,16 @@ img {
     color: white;
     display: block;
 
-    @include desktop-tablet {
+    @include tablet {
         height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    &__title {
+        @include tablet {
+            margin-right: 7vw;
+        }
     }
 
     &__wrapper {
@@ -57,16 +65,22 @@ img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include desktop-tablet {
+        justify-content: center;
+        @include tablet {
             align-items: baseline;
+            justify-content: flex-start;
             flex-direction: row;
             height: 100%;
             margin-bottom: 0;
+            @include tablet-padding;
+        }
+
+        @include desktop {
             @include desktop-padding;
         }
-        justify-content: center;
+
         width: 100%;
-        // @include desktop-tablet {
+        // @include tablet {
         //     flex-direction: row;
         // }
     }
@@ -77,20 +91,26 @@ img {
         width: 100%;
         justify-content: space-around;
         // height: 100%;
-        @include desktop-tablet {
-            height: 110px;
+        @include tablet {
+            height: 55px;
+            width: auto;
+
+            // justify-content: flex-start;
         }
         &--link {
             width: 100%;
 
             margin-bottom: 0;
             padding-bottom: 16px;
+            @include tablet {
+                margin: 0 3vw;
+            }
         }
     }
 
     &__active {
         border-bottom: 4px solid white;
-        @include desktop-tablet {
+        @include tablet {
             bottom: 0;
         }
     }
@@ -102,7 +122,7 @@ img {
     background-size: cover;
     width: 100%;
     height: 300px;
-    @include desktop-tablet {
+    @include tablet {
         height: 500px;
     }
     display: flex;
@@ -112,7 +132,11 @@ img {
         padding: 24px;
         color: white;
         height: auto;
-        @include desktop-tablet {
+        @include tablet {
+            @include tablet-padding;
+        }
+
+        @include desktop {
             @include desktop-padding;
         }
     }
@@ -120,13 +144,21 @@ img {
 
 .about {
     padding: 24px;
-    @include desktop-tablet {
+    @include tablet {
+        @include tablet-padding;
+    }
+
+    @include desktop {
         @include desktop-padding;
     }
 
     &__narrow-margins {
-        @include desktop-tablet {
-            @include desktop-padding--narrow;
+        @include tablet {
+            @include tablet-padding--narrow;
+        }
+
+        @include desktop {
+            @include desktop-padding;
         }
     }
 }
@@ -137,12 +169,16 @@ img {
     flex-direction: column;
     justify-content: center;
 
-    @include desktop-tablet {
+    @include tablet {
+        @include tablet-padding;
+    }
+
+    @include desktop {
         @include desktop-padding;
     }
 
     &__photos {
-        @include desktop-tablet {
+        @include tablet {
             display: flex;
             justify-content: space-between;
             align-content: space-evenly;
@@ -151,7 +187,7 @@ img {
 
         & img {
             margin: 1.7vw 0;
-            @include desktop-tablet {
+            @include tablet {
                 width: 32%;
                 margin: 0.9vw 0;
             }
@@ -164,9 +200,14 @@ img {
     background-color: $bandsite-black;
     width: 100%;
     padding: 24px;
-    @include desktop-tablet {
+    @include tablet {
+        @include tablet-padding;
+    }
+
+    @include desktop {
         @include desktop-padding;
     }
+
     &__social-logo {
         height: 50px;
         width: auto;
@@ -176,14 +217,14 @@ img {
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        @include desktop-tablet {
+        @include tablet {
             flex-direction: row;
         }
     }
     &__contacts {
         display: flex;
         flex-direction: column;
-        @include desktop-tablet {
+        @include tablet {
             flex-direction: row;
             justify-content: space-between;
         }
