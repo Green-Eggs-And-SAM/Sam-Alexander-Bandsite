@@ -9,10 +9,7 @@
 
 body {
     margin: 0;
-    //
     font-family: Avenir;
-}
-main {
 }
 
 //Page Header
@@ -39,6 +36,30 @@ h3 {
     }
 }
 
+//Footer Copy
+h4 {
+    @include Footer-Copy__Mobile;
+    @include tablet {
+        @include Footer-Copy__Desktop-Tablet;
+    }
+}
+
+//Labels and buttons
+h5 {
+    @include Body-Bold__Mobile;
+    @include tablet {
+        @include Body-Bold__Desktop-Tablet;
+    }
+}
+
+//Body
+p {
+    @include Body-Copy__Mobile;
+    @include tablet {
+        @include Body-Copy__Desktop-Tablet;
+    }
+}
+
 img {
     width: 100%;
 }
@@ -49,7 +70,7 @@ img {
     display: block;
 
     @include tablet {
-        height: 100%;
+        // height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -80,9 +101,6 @@ img {
         }
 
         width: 100%;
-        // @include tablet {
-        //     flex-direction: row;
-        // }
     }
 
     &__nav {
@@ -90,9 +108,10 @@ img {
 
         width: 100%;
         justify-content: space-around;
-        // height: 100%;
+
+        margin-bottom: 0;
         @include tablet {
-            height: 55px;
+            height: 56px; // height: 100% not working for some reason
             width: auto;
 
             // justify-content: flex-start;
@@ -103,15 +122,17 @@ img {
             margin-bottom: 0;
             padding-bottom: 16px;
             @include tablet {
-                margin: 0 3vw;
+                margin: 0 2vw;
             }
         }
-    }
 
-    &__active {
-        border-bottom: 4px solid white;
-        @include tablet {
-            bottom: 0;
+        //highlight current page
+        &--active,
+        &--link:hover {
+            border-bottom: 4px solid white;
+            @include tablet {
+                bottom: 0;
+            }
         }
     }
 }
@@ -191,6 +212,12 @@ img {
                 width: 32%;
                 margin: 0.9vw 0;
             }
+
+            filter: grayscale(1);
+            transition: 0.3s;
+            &:hover {
+                filter: grayscale(0);
+            }
         }
     }
 }
@@ -208,25 +235,68 @@ img {
         @include desktop-padding;
     }
 
-    &__social-logo {
-        height: 50px;
-        width: auto;
-    }
-
     &__header {
         display: flex;
         flex-direction: column;
         align-items: baseline;
         @include tablet {
             flex-direction: row;
+
+            justify-content: space-between;
+        }
+
+        &-social-pair {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+                align-items: baseline;
+                justify-content: flex-start;
+            }
         }
     }
+
+    &__social {
+        width: 160px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include tablet {
+            margin-left: 45px;
+        }
+
+        &--logo {
+            height: 30px;
+            width: auto;
+        }
+    }
+
     &__contacts {
         display: flex;
         flex-direction: column;
         @include tablet {
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-start;
+        }
+
+        &--card {
+            @include tablet {
+                padding-right: 60px;
+                width: 260px;
+            }
+        }
+    }
+
+    &__bandsite--mobile {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__bandsite--tablet-desktop {
+        display: none;
+        @include tablet {
+            display: flex;
         }
     }
 }

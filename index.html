@@ -11,7 +11,7 @@
             <article class="page-header__wrapper">
                 <h3 class="page-header__title">Bandsite</h3>
                 <nav class="page-header__nav">
-                    <h3 class="page-header__nav--link page-header__active">
+                    <h3 class="page-header__nav--link page-header__nav--active">
                         Biography
                     </h3>
                     <h3 class="page-header__nav--link">Shows</h3>
@@ -110,29 +110,33 @@
 
         <footer class="page-footer">
             <div class="page-footer__header">
-                <h2>Get in Touch</h2>
-                <section>
-                    <img
-                        class="page-footer__social-logo"
-                        src="/assets/icons/Icon-instagram.svg"
-                        alt="Instagram"
-                    />
-                    <img
-                        class="page-footer__social-logo"
-                        src="/assets/icons/Icon-facebook.svg"
-                        alt="facebook"
-                    />
-                    <img
-                        class="page-footer__social-logo"
-                        src="/assets/icons/Icon-twitter.svg"
-                        alt="twitter"
-                    />
-                </section>
+                <!-- header and social have unique margins together -->
+                <div class="page-footer__header-social-pair">
+                    <h2>Get in Touch</h2>
+                    <section class="page-footer__social">
+                        <img
+                            class="page-footer__social--logo"
+                            src="/assets/icons/Icon-instagram.svg"
+                            alt="Instagram"
+                        />
+                        <img
+                            class="page-footer__social--logo"
+                            src="/assets/icons/Icon-facebook.svg"
+                            alt="facebook"
+                        />
+                        <img
+                            class="page-footer__social--logo"
+                            src="/assets/icons/Icon-twitter.svg"
+                            alt="twitter"
+                        />
+                    </section>
+                </div>
+                <h2 class="page-footer__bandsite--tablet-desktop">BANDSITE</h2>
             </div>
 
             <div class="page-footer__contacts">
-                <section>
-                    <h3>The Bees Knees Management</h3>
+                <section class="page-footer__contacts--card">
+                    <h5>The Bees Knees Management</h5>
                     <p>
                         503 Broadway Penthouse, <br />
                         New York, NY 10012, USA
@@ -140,8 +144,8 @@
                     <p>info@thebeesknees.com</p>
                 </section>
 
-                <section>
-                    <h3>Limitless Artist Group</h3>
+                <section class="page-footer__contacts--card">
+                    <h5>Limitless Artist Group</h5>
                     <p>
                         Booking Agent for
                         <br />
@@ -150,8 +154,8 @@
                     <p>bookings@limitlessag.com</p>
                 </section>
 
-                <section>
-                    <h3>ARCH Entertainment</h3>
+                <section class="page-footer__contacts--card">
+                    <h5>ARCH Entertainment</h5>
                     <p>
                         Booking Agent for
                         <br />
@@ -161,7 +165,7 @@
                 </section>
             </div>
             <section>
-                <h2>BANDSITE</h2>
+                <h4 class="page-footer__bandsite--mobile">BANDSITE</h4>
                 <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
             </section>
         </footer>

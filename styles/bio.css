@@ -45,6 +45,45 @@ h3 {
   }
 }
 
+h4 {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}
+
+h5 {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h5 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+  }
+}
+
+p {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+}
+
 img {
   width: 100%;
 }
@@ -56,7 +95,6 @@ img {
 }
 @media (min-width: 768px) {
   .page-header {
-    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -96,10 +134,11 @@ img {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .page-header__nav {
-    height: 55px;
+    height: 56px;
     width: auto;
   }
 }
@@ -110,14 +149,14 @@ img {
 }
 @media (min-width: 768px) {
   .page-header__nav--link {
-    margin: 0 3vw;
+    margin: 0 2vw;
   }
 }
-.page-header__active {
+.page-header__nav--active, .page-header__nav--link:hover {
   border-bottom: 4px solid white;
 }
 @media (min-width: 768px) {
-  .page-header__active {
+  .page-header__nav--active, .page-header__nav--link:hover {
     bottom: 0;
   }
 }
@@ -211,12 +250,17 @@ img {
 }
 .photo-gallery__photos img {
   margin: 1.7vw 0;
+  filter: grayscale(1);
+  transition: 0.3s;
 }
 @media (min-width: 768px) {
   .photo-gallery__photos img {
     width: 32%;
     margin: 0.9vw 0;
   }
+}
+.photo-gallery__photos img:hover {
+  filter: grayscale(0);
 }
 
 .page-footer {
@@ -237,10 +281,6 @@ img {
     padding-right: 120px;
   }
 }
-.page-footer__social-logo {
-  height: 50px;
-  width: auto;
-}
 .page-footer__header {
   display: flex;
   flex-direction: column;
@@ -249,7 +289,34 @@ img {
 @media (min-width: 768px) {
   .page-footer__header {
     flex-direction: row;
+    justify-content: space-between;
   }
+}
+.page-footer__header-social-pair {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .page-footer__header-social-pair {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+}
+.page-footer__social {
+  width: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .page-footer__social {
+    margin-left: 45px;
+  }
+}
+.page-footer__social--logo {
+  height: 30px;
+  width: auto;
 }
 .page-footer__contacts {
   display: flex;
@@ -258,6 +325,25 @@ img {
 @media (min-width: 768px) {
   .page-footer__contacts {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-start;
+  }
+}
+@media (min-width: 768px) {
+  .page-footer__contacts--card {
+    padding-right: 60px;
+    width: 260px;
+  }
+}
+@media (min-width: 768px) {
+  .page-footer__bandsite--mobile {
+    display: none;
+  }
+}
+.page-footer__bandsite--tablet-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .page-footer__bandsite--tablet-desktop {
+    display: flex;
   }
 }/*# sourceMappingURL=bio.css.map */
