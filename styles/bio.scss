@@ -98,23 +98,23 @@ a {
     text-decoration: inherit;
 }
 
+.bandsite--logo {
+    max-width: 120px;
+    max-height: 20px;
+}
+
 .page-header {
     background-color: $bandsite-black;
     color: $white;
     display: block;
 
     @include tablet {
-        // height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
     }
-    &__title {
-        font-weight: 400;
+    &__logo {
         margin: 1rem 0;
-        @include tablet {
-            margin-right: 7vw;
-        }
     }
 
     &__wrapper {
@@ -137,6 +137,15 @@ a {
         }
 
         width: 100%;
+    }
+
+    //dissappear on mobile. show on tablet and desktop
+    &__gutter {
+        display: none;
+        @include tablet {
+            display: block;
+            width: 3rem;
+        }
     }
 
     &__nav {

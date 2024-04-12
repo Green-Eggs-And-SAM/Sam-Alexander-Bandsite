@@ -107,6 +107,11 @@ a {
   text-decoration: inherit;
 }
 
+.bandsite--logo {
+  max-width: 120px;
+  max-height: 20px;
+}
+
 .page-header {
   background-color: #323232;
   color: #fff;
@@ -119,14 +124,8 @@ a {
     justify-content: flex-start;
   }
 }
-.page-header__title {
-  font-weight: 400;
+.page-header__logo {
   margin: 1rem 0;
-}
-@media (min-width: 768px) {
-  .page-header__title {
-    margin-right: 7vw;
-  }
 }
 .page-header__wrapper {
   text-align: center;
@@ -151,6 +150,15 @@ a {
   .page-header__wrapper {
     padding-left: 120px;
     padding-right: 120px;
+  }
+}
+.page-header__gutter {
+  display: none;
+}
+@media (min-width: 768px) {
+  .page-header__gutter {
+    display: block;
+    width: 3rem;
   }
 }
 .page-header__nav {
