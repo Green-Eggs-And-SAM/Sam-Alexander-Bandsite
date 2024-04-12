@@ -102,7 +102,7 @@ a {
 
 .page-header {
     background-color: $bandsite-black;
-    color: white;
+    color: $white;
     display: block;
 
     @include tablet {
@@ -113,6 +113,7 @@ a {
     }
     &__title {
         font-weight: 400;
+        margin: 1rem 0;
         @include tablet {
             margin-right: 7vw;
         }
@@ -125,7 +126,7 @@ a {
         align-items: center;
         justify-content: center;
         @include tablet {
-            align-items: baseline;
+            align-items: center;
             justify-content: flex-start;
             flex-direction: row;
             height: 100%;
@@ -148,7 +149,7 @@ a {
 
         margin-bottom: 0;
         @include tablet {
-            height: 56px; // height: 100% not working for some reason
+            height: 100%;
             width: auto;
 
             // justify-content: flex-start;
@@ -156,18 +157,21 @@ a {
         &--link {
             width: 100%;
 
-            margin-bottom: 0;
-            padding-bottom: 16px;
+            margin: 0;
+            padding: 1.15rem 0;
             @include tablet {
                 margin: 0 2vw;
             }
         }
 
         //highlight current page
+        &--active {
+            font-weight: 600;
+        }
+
         &--active,
         &--link:hover {
             border-bottom: 4px solid white;
-            font-weight: 600;
             @include tablet {
                 bottom: 0;
             }
@@ -178,7 +182,7 @@ a {
 .hero {
     &--dark-foreground {
         padding: 0;
-        background: rgba(0, 0, 0, 0.4);
+        background: $bandsite-black-transparent;
     }
 
     &--img-background {
@@ -197,8 +201,10 @@ a {
         flex-direction: column;
         justify-content: center;
         padding: 24px;
-        color: white;
+        color: $white;
         height: 300px;
+        margin: 0;
+        z-index: 10;
         @include tablet {
             height: 500px;
             @include tablet-padding;
@@ -275,8 +281,9 @@ a {
             }
 
             filter: grayscale(1);
-            transition: 0.3s;
+
             &:hover {
+                transition: 0.3s;
                 filter: grayscale(0);
             }
         }
@@ -323,15 +330,15 @@ a {
         flex-direction: row;
         justify-content: space-between;
         @include tablet {
-            margin-left: 45px;
+            margin-left: 2.8rem;
         }
 
         @include desktop {
-            margin-left: 95px;
+            margin-left: 6.7rem;
         }
 
         &--logo {
-            height: 30px;
+            height: 2rem;
             width: auto;
         }
 
@@ -379,7 +386,7 @@ a {
             @include desktop {
                 width: 260px;
                 &-gutter {
-                    margin-right: 20px;
+                    margin-right: 2rem;
                 }
             }
         }

@@ -4,14 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./styles/bio.css" />
-        <title>Bandsite</title>
+        <title>Bandsite Bio</title>
     </head>
     <body>
         <header class="page-header">
             <article class="page-header__wrapper">
-                <a href="/index.html"
-                    ><h3 class="page-header__title">Bandsite</h3></a
-                >
+                <a href="/index.html">
+                    <h3 class="page-header__title">BANDSITE</h3>
+                </a>
                 <nav class="page-header__nav">
                     <p class="page-header__nav--link page-header__nav--active">
                         Biography
@@ -22,7 +22,9 @@
         </header>
 
         <main>
+            <!-- pink flower and bee background at 100% opacity -->
             <div class="hero--img-background">
+                <!-- flower background img is covered by a 50% opacity black layer in order to acheive darkening affect-->
                 <article class="hero--dark-foreground">
                     <h1 class="hero__title">The Bees Knees</h1>
                 </article>
@@ -117,12 +119,13 @@
 
         <footer class="page-footer">
             <div class="page-footer__header">
-                <!-- header and social have unique margins together for desktop -->
+                <!-- header title and social have unique margins together for desktop -->
+                <!-- for mobile/desktop, header title and social logos must be paired -->
                 <div class="page-footer__header-social-pair">
                     <h3>Get in Touch</h3>
-                    <!-- alignment for desktop is unique. desktop socials must be aligned with "Get in touch". 
+                    <!-- DESKTOP: alignment for desktop is unique. desktop socials must be aligned relative "Get in touch" title. 
                         hide the below social logos in tablet -->
-                    <article
+                    <section
                         class="page-footer__social page-footer__social--show-on-mobile-desktop"
                     >
                         <a href="https://www.instagram.com/">
@@ -147,12 +150,12 @@
                                 alt="twitter"
                             />
                         </a>
-                    </article>
+                    </section>
                 </div>
 
-                <!-- alignment for table is unique. tablet socials must be centered. 
+                <!-- TABLET: alignment for tablet is unique. tablet socials must be centered. 
                     hide the above social logos in tablet -->
-                <article
+                <section
                     class="page-footer__social page-footer__social--show-on-tablet-only"
                 >
                     <a href="https://www.instagram.com/">
@@ -177,8 +180,8 @@
                             alt="twitter"
                         />
                     </a>
-                </article>
-                <!-- toggle this on in mobile, off in tablet/desktop -->
+                </section>
+                <!-- DESKTOP/MOBILE: toggle "Bandsite" on in tablet/desktop, off in mobile -->
                 <h4 class="page-footer__bandsite--tablet-desktop">BANDSITE</h4>
             </div>
 
@@ -222,10 +225,11 @@
                     >
                 </section>
             </div>
-            <section>
+            <article>
+                <!-- MOBILE: toggle "bandsite" on in mobile, off in tablet/desktop -->
                 <h4 class="page-footer__bandsite--mobile">BANDSITE</h4>
                 <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
-            </section>
+            </article>
         </footer>
     </body>
 </html>

@@ -109,7 +109,7 @@ a {
 
 .page-header {
   background-color: #323232;
-  color: white;
+  color: #fff;
   display: block;
 }
 @media (min-width: 768px) {
@@ -121,6 +121,7 @@ a {
 }
 .page-header__title {
   font-weight: 400;
+  margin: 1rem 0;
 }
 @media (min-width: 768px) {
   .page-header__title {
@@ -137,7 +138,7 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__wrapper {
-    align-items: baseline;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     height: 100%;
@@ -160,23 +161,25 @@ a {
 }
 @media (min-width: 768px) {
   .page-header__nav {
-    height: 56px;
+    height: 100%;
     width: auto;
   }
 }
 .page-header__nav--link {
   width: 100%;
-  margin-bottom: 0;
-  padding-bottom: 16px;
+  margin: 0;
+  padding: 1.15rem 0;
 }
 @media (min-width: 768px) {
   .page-header__nav--link {
     margin: 0 2vw;
   }
 }
+.page-header__nav--active {
+  font-weight: 600;
+}
 .page-header__nav--active, .page-header__nav--link:hover {
   border-bottom: 4px solid white;
-  font-weight: 600;
 }
 @media (min-width: 768px) {
   .page-header__nav--active, .page-header__nav--link:hover {
@@ -186,7 +189,7 @@ a {
 
 .hero--dark-foreground {
   padding: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(32, 32, 32, 0.5);
 }
 .hero--img-background {
   background-image: url("/assets/images/hero-bio.jpg");
@@ -204,8 +207,10 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 24px;
-  color: white;
+  color: #fff;
   height: 300px;
+  margin: 0;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -292,7 +297,6 @@ a {
 .photo-gallery__photos img {
   margin: 1.7vw 0;
   filter: grayscale(1);
-  transition: 0.3s;
 }
 @media (min-width: 768px) {
   .photo-gallery__photos img {
@@ -301,6 +305,7 @@ a {
   }
 }
 .photo-gallery__photos img:hover {
+  transition: 0.3s;
   filter: grayscale(0);
 }
 
@@ -352,16 +357,16 @@ a {
 }
 @media (min-width: 768px) {
   .page-footer__social {
-    margin-left: 45px;
+    margin-left: 2.8rem;
   }
 }
 @media (min-width: 1200px) {
   .page-footer__social {
-    margin-left: 95px;
+    margin-left: 6.7rem;
   }
 }
 .page-footer__social--logo {
-  height: 30px;
+  height: 2rem;
   width: auto;
 }
 .page-footer__social--show-on-tablet-only {
@@ -414,7 +419,7 @@ a {
     width: 260px;
   }
   .page-footer__contacts--card-gutter {
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 }
 @media (min-width: 768px) {
