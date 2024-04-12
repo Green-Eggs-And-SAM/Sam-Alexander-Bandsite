@@ -1,2 +1,4 @@
 .vscode
-.DS_STORE
+*.DS_STORE
+bio.css
+bio.css.map

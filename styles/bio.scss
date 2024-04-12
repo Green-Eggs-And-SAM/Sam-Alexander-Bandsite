@@ -1,3 +1,5 @@
+//bio.css and bio.css.map have been gitignored
+
 @use './font-styles' as *;
 @use './variables' as *;
 
@@ -20,15 +22,11 @@
 }
 
 * {
-    // border: 1px dotted green;
-
     box-sizing: border-box;
-    // font-family: 'Times New Roman', Times, serif;
 } /*# sourceMappingURL=bio.css.map */
 
 body {
     margin: 0;
-    // font-family: Cambria;
 }
 
 //Page Header
@@ -151,8 +149,6 @@ a {
         @include tablet {
             height: 100%;
             width: auto;
-
-            // justify-content: flex-start;
         }
         &--link {
             width: 100%;
@@ -194,14 +190,13 @@ a {
             height: 500px;
         }
     }
-    // filter: brightness(0.5);
 
     &__title {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 24px;
         color: $white;
+        padding: 24px;
         height: 300px;
         margin: 0;
         z-index: 10;
@@ -227,6 +222,7 @@ a {
         @include desktop-padding;
     }
 
+    //narrower margins for the about section
     &__narrow-margins {
         @include tablet {
             @include tablet-padding--narrow;
@@ -236,6 +232,7 @@ a {
             @include desktop-padding;
         }
     }
+
     &__story {
         @include tablet {
             display: flex;
@@ -280,6 +277,7 @@ a {
                 margin: 0.9vw 0;
             }
 
+            //grayscale animation
             filter: grayscale(1);
 
             &:hover {
@@ -342,6 +340,7 @@ a {
             width: auto;
         }
 
+        //show on tablet view. hide on mobile and desktop
         &--show-on-tablet-only {
             display: none;
             @include tablet {
@@ -353,7 +352,8 @@ a {
                 display: none;
             }
         }
-        //sho
+
+        //show on mobile and desktop. hide on tablet
         &--show-on-mobile-desktop {
             display: flex;
             @include tablet {
@@ -372,7 +372,6 @@ a {
         width: 100%;
         @include tablet {
             flex-direction: row;
-            // justify-content: flex-start;
         }
 
         &--card {
@@ -392,12 +391,14 @@ a {
         }
     }
 
+    //hide "BANDSITE" for tablet/desktop. show for mobile
     &__bandsite--mobile {
         @include tablet {
             display: none;
         }
     }
 
+    //hide "BANDSITE" for mobile. show for tablet desktop
     &__bandsite--tablet-desktop {
         display: none;
         @include tablet {
