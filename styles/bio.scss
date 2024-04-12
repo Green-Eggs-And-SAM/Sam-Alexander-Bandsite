@@ -1,19 +1,40 @@
-@use './font-sizes' as *;
+@use './font-styles' as *;
 @use './variables' as *;
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format('otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
+    font-weight: 700;
+}
 
 * {
     // border: 1px dotted green;
 
     box-sizing: border-box;
+    // font-family: 'Times New Roman', Times, serif;
 } /*# sourceMappingURL=bio.css.map */
 
 body {
     margin: 0;
-    font-family: Avenir;
+    // font-family: Cambria;
 }
 
 //Page Header
 h1 {
+    font-family: 'Avenir';
+    font-weight: 700;
     @include Page-Header-Font__Mobile;
     @include tablet {
         @include Page-Header-Font__Desktop-Tablet;
@@ -22,6 +43,8 @@ h1 {
 
 //Section Header
 h2 {
+    font-family: 'Avenir';
+    font-weight: 700;
     @include Section-Header-Font__Mobile;
     @include tablet {
         @include Section-Header-Font__Desktop-Tablet;
@@ -30,6 +53,8 @@ h2 {
 
 //Sub Header
 h3 {
+    font-family: 'Avenir';
+    font-weight: 600;
     @include Subheader-Font__Mobile;
     @include tablet {
         @include Subheader-Font__Desktop-Tablet;
@@ -38,6 +63,8 @@ h3 {
 
 //Footer Copy
 h4 {
+    font-family: 'Avenir';
+    font-weight: 400;
     @include Footer-Copy__Mobile;
     @include tablet {
         @include Footer-Copy__Desktop-Tablet;
@@ -46,6 +73,8 @@ h4 {
 
 //Labels and buttons
 h5 {
+    font-family: 'Avenir';
+    font-weight: 600;
     @include Body-Bold__Mobile;
     @include tablet {
         @include Body-Bold__Desktop-Tablet;
@@ -54,6 +83,8 @@ h5 {
 
 //Body
 p {
+    font-family: 'Avenir';
+    font-weight: 400;
     @include Body-Copy__Mobile;
     @include tablet {
         @include Body-Copy__Desktop-Tablet;
@@ -65,7 +96,7 @@ img {
 }
 
 .page-header {
-    background-color: black;
+    background-color: $bandsite-black;
     color: white;
     display: block;
 
@@ -137,7 +168,7 @@ img {
     }
 }
 
-.band {
+.hero {
     padding: 0;
     background-image: url('/assets/images/hero-bio.jpg');
     background-size: cover;
@@ -165,6 +196,7 @@ img {
 
 .about {
     padding: 24px;
+    color: $bandsite-black;
     @include tablet {
         @include tablet-padding;
     }
@@ -182,6 +214,18 @@ img {
             @include desktop-padding;
         }
     }
+    &__story {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &--gutter {
+            @include tablet {
+                padding: 15px;
+            }
+        }
+    }
 }
 
 .photo-gallery {
@@ -189,7 +233,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    background-color: $alabaster;
+    color: $bandsite-black;
     @include tablet {
         @include tablet-padding;
     }

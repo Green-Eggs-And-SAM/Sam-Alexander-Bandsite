@@ -1,86 +1,100 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-weight: 700;
+}
 * {
   box-sizing: border-box;
 } 
 body {
   margin: 0;
-  font-family: Avenir;
 }
 
 h1 {
+  font-family: "Avenir";
+  font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  font-weight: 700;
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 68px;
-    font-weight: 700;
   }
 }
 
 h2 {
+  font-family: "Avenir";
+  font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  font-weight: 700;
 }
 @media (min-width: 768px) {
   h2 {
-    font-size: 36px;
+    font-size: 3rem;
     line-height: 44px;
-    font-weight: 700;
   }
 }
 
 h3 {
+  font-family: "Avenir";
+  font-weight: 600;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 600;
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 32px;
-    font-weight: 600;
   }
 }
 
 h4 {
+  font-family: "Avenir";
+  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400;
 }
 @media (min-width: 768px) {
   h4 {
-    font-size: 14px;
+    font-size: 1.75rem;
     line-height: 20px;
-    font-weight: 400;
   }
 }
 
 h5 {
+  font-family: "Avenir";
+  font-weight: 600;
   font-size: 13px;
   line-height: 18px;
-  font-weight: 700;
 }
 @media (min-width: 768px) {
   h5 {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 22px;
-    font-weight: 700;
   }
 }
 
 p {
+  font-family: "Avenir";
+  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400;
 }
 @media (min-width: 768px) {
   p {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 22px;
-    font-weight: 400;
   }
 }
 
@@ -89,7 +103,7 @@ img {
 }
 
 .page-header {
-  background-color: black;
+  background-color: #323232;
   color: white;
   display: block;
 }
@@ -161,7 +175,7 @@ img {
   }
 }
 
-.band {
+.hero {
   padding: 0;
   background-image: url("/assets/images/hero-bio.jpg");
   background-size: cover;
@@ -172,23 +186,23 @@ img {
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .band {
+  .hero {
     height: 500px;
   }
 }
-.band__title {
+.hero__title {
   padding: 24px;
   color: white;
   height: auto;
 }
 @media (min-width: 768px) {
-  .band__title {
+  .hero__title {
     padding-left: 72px;
     padding-right: 72px;
   }
 }
 @media (min-width: 1200px) {
-  .band__title {
+  .hero__title {
     padding-left: 120px;
     padding-right: 120px;
   }
@@ -196,6 +210,7 @@ img {
 
 .about {
   padding: 24px;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .about {
@@ -221,12 +236,25 @@ img {
     padding-right: 120px;
   }
 }
+@media (min-width: 768px) {
+  .about__story {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .about__story--gutter {
+    padding: 15px;
+  }
+}
 
 .photo-gallery {
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fafafa;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .photo-gallery {

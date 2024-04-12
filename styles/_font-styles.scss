@@ -1,47 +1,47 @@
-//FONT SIZES HAVE BEEN DESIGNED TO MATCH MOCKUPS
+//FONT SIZES HAVE BEEN PRIORITIZED TO MATCH MOCKUPS
 
 // Desktop and Tables sizes
 
 //h1
 @mixin Page-Header-Font__Desktop-Tablet {
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 68px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //h2
 @mixin Section-Header-Font__Desktop-Tablet {
-    font-size: 36px;
+    font-size: 3rem;
     line-height: 44px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //h3
 @mixin Subheader-Font__Desktop-Tablet {
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 32px;
-    font-weight: 600;
+    // font-weight: 600;
 }
 
 //h4
 @mixin Footer-Copy__Desktop-Tablet {
-    font-size: 14px;
+    font-size: 1.75rem;
     line-height: 20px;
-    font-weight: 400;
+    // font-weight: 400;
 }
 
 //h5
 @mixin Body-Bold__Desktop-Tablet {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 22px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //p
 @mixin Body-Copy__Desktop-Tablet {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 22px;
-    font-weight: 400;
+    // font-weight: 400;
 }
 
 // Mobile sizes
@@ -50,40 +50,40 @@
 @mixin Page-Header-Font__Mobile {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //h2
 @mixin Section-Header-Font__Mobile {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //h3
 @mixin Subheader-Font__Mobile {
     font-size: 14px;
     line-height: 22px;
-    font-weight: 600;
+    // font-weight: 600;
 }
 
 //h4
 @mixin Footer-Copy__Mobile {
     font-size: 13px;
     line-height: 18px;
-    font-weight: 400;
+    // font-weight: 400;
 }
 
 //h5
 @mixin Body-Bold__Mobile {
     font-size: 13px;
     line-height: 18px;
-    font-weight: 700;
+    // font-weight: 700;
 }
 
 //p
 @mixin Body-Copy__Mobile {
     font-size: 13px;
     line-height: 18px;
-    font-weight: 400;
+    // font-weight: 400;
 }
