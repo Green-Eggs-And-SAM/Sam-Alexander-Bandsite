@@ -48,42 +48,42 @@
 
 //h1
 @mixin Page-Header-Font__Mobile {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 3rem;
+    line-height: 50px;
     // font-weight: 700;
 }
 
 //h2
 @mixin Section-Header-Font__Mobile {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 2.5rem;
+    line-height: 46px;
     // font-weight: 700;
 }
 
 //h3
 @mixin Subheader-Font__Mobile {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 2.25rem;
+    line-height: 40px;
     // font-weight: 600;
 }
 
 //h4
 @mixin Footer-Copy__Mobile {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 2rem;
+    line-height: 28px;
     // font-weight: 400;
 }
 
 //h5
 @mixin Body-Bold__Mobile {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 1.5rem;
+    line-height: 28px;
     // font-weight: 700;
 }
 
 //p
 @mixin Body-Copy__Mobile {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 1.25rem;
+    line-height: 28px;
     // font-weight: 400;
 }

@@ -9,12 +9,14 @@
     <body>
         <header class="page-header">
             <article class="page-header__wrapper">
-                <h3 class="page-header__title">Bandsite</h3>
+                <a href="/index.html"
+                    ><h3 class="page-header__title">Bandsite</h3></a
+                >
                 <nav class="page-header__nav">
-                    <h4 class="page-header__nav--link page-header__nav--active">
+                    <p class="page-header__nav--link page-header__nav--active">
                         Biography
-                    </h4>
-                    <h4 class="page-header__nav--link">Shows</h4>
+                    </p>
+                    <p class="page-header__nav--link">Shows</p>
                 </nav>
             </article>
         </header>
@@ -37,7 +39,7 @@
 
                     <h3>The Bees Knees</h3>
                     <article class="about__story">
-                        <p ">
+                        <p>
                             The Bees Knees is a pop rock band originating from
                             San Francisco, California. The band consists a
                             dynamic lineup featuring two lead vocalists, two
@@ -113,48 +115,97 @@
 
         <footer class="page-footer">
             <div class="page-footer__header">
-                <!-- header and social have unique margins together -->
+                <!-- header and social have unique margins together for desktop -->
                 <div class="page-footer__header-social-pair">
-                    <h2>Get in Touch</h2>
-                    <section class="page-footer__social">
+                    <h3>Get in Touch</h3>
+                    <!-- alignment for desktop is unique. desktop socials must be aligned with "Get in touch". 
+                        hide the below social logos in tablet -->
+                    <article
+                        class="page-footer__social page-footer__social--show-on-mobile-desktop"
+                    >
+                        <a href="https://www.instagram.com/">
+                            <img
+                                class="page-footer__social--logo"
+                                src="/assets/icons/Icon-instagram.svg"
+                                alt="Instagram"
+                            />
+                        </a>
+                        <a href="https://www.facebook.com">
+                            <img
+                                class="page-footer__social--logo"
+                                src="/assets/icons/Icon-facebook.svg"
+                                alt="facebook"
+                            />
+                        </a>
+
+                        <a href="https://twitter.com/?lang=en">
+                            <img
+                                class="page-footer__social--logo"
+                                src="/assets/icons/Icon-twitter.svg"
+                                alt="twitter"
+                            />
+                        </a>
+                    </article>
+                </div>
+
+                <!-- alignment for table is unique. tablet socials must be centered. 
+                    hide the above social logos in tablet -->
+                <article
+                    class="page-footer__social page-footer__social--show-on-tablet-only"
+                >
+                    <a href="https://www.instagram.com/">
                         <img
                             class="page-footer__social--logo"
                             src="/assets/icons/Icon-instagram.svg"
                             alt="Instagram"
                         />
+                    </a>
+                    <a href="https://www.facebook.com">
                         <img
                             class="page-footer__social--logo"
                             src="/assets/icons/Icon-facebook.svg"
                             alt="facebook"
                         />
+                    </a>
+
+                    <a href="https://twitter.com/?lang=en">
                         <img
                             class="page-footer__social--logo"
                             src="/assets/icons/Icon-twitter.svg"
                             alt="twitter"
                         />
-                    </section>
-                </div>
-                <h2 class="page-footer__bandsite--tablet-desktop">BANDSITE</h2>
+                    </a>
+                </article>
+                <!-- toggle this on in mobile, off in tablet/desktop -->
+                <h4 class="page-footer__bandsite--tablet-desktop">BANDSITE</h4>
             </div>
 
             <div class="page-footer__contacts">
-                <section class="page-footer__contacts--card">
+                <section
+                    class="page-footer__contacts--card page-footer__contacts--card-gutter"
+                >
                     <h5>The Bees Knees Management</h5>
                     <p>
                         503 Broadway Penthouse, <br />
                         New York, NY 10012, USA
                     </p>
-                    <p>info@thebeesknees.com</p>
+                    <a href="mailto:info@thebeesknees.com"
+                        ><p>info@thebeesknees.com</p></a
+                    >
                 </section>
 
-                <section class="page-footer__contacts--card">
+                <section
+                    class="page-footer__contacts--card page-footer__contacts--card-gutter"
+                >
                     <h5>Limitless Artist Group</h5>
                     <p>
                         Booking Agent for
                         <br />
                         US / South America / Japan
                     </p>
-                    <p>bookings@limitlessag.com</p>
+                    <a href="mailto:bookings@limitlessag.com"
+                        ><p>bookings@limitlessag.com</p></a
+                    >
                 </section>
 
                 <section class="page-footer__contacts--card">
@@ -164,7 +215,9 @@
                         <br />
                         UK / EU / AU
                     </p>
-                    <p>bookings@archentertainment.com</p>
+                    <a href="mailto:bookings@archentertainment.com"
+                        ><p>bookings@archentertainment.com</p></a
+                    >
                 </section>
             </div>
             <section>

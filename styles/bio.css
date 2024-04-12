@@ -23,8 +23,8 @@ body {
 h1 {
   font-family: "Avenir";
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 3rem;
+  line-height: 50px;
 }
 @media (min-width: 768px) {
   h1 {
@@ -36,8 +36,8 @@ h1 {
 h2 {
   font-family: "Avenir";
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 2.5rem;
+  line-height: 46px;
 }
 @media (min-width: 768px) {
   h2 {
@@ -49,8 +49,8 @@ h2 {
 h3 {
   font-family: "Avenir";
   font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 2.25rem;
+  line-height: 40px;
 }
 @media (min-width: 768px) {
   h3 {
@@ -62,8 +62,8 @@ h3 {
 h4 {
   font-family: "Avenir";
   font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 2rem;
+  line-height: 28px;
 }
 @media (min-width: 768px) {
   h4 {
@@ -75,8 +75,8 @@ h4 {
 h5 {
   font-family: "Avenir";
   font-weight: 600;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.5rem;
+  line-height: 28px;
 }
 @media (min-width: 768px) {
   h5 {
@@ -88,8 +88,8 @@ h5 {
 p {
   font-family: "Avenir";
   font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 1.25rem;
+  line-height: 28px;
 }
 @media (min-width: 768px) {
   p {
@@ -100,6 +100,11 @@ p {
 
 img {
   width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .page-header {
@@ -113,6 +118,9 @@ img {
     flex-direction: row;
     justify-content: flex-start;
   }
+}
+.page-header__title {
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .page-header__title {
@@ -168,6 +176,7 @@ img {
 }
 .page-header__nav--active, .page-header__nav--link:hover {
   border-bottom: 4px solid white;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .page-header__nav--active, .page-header__nav--link:hover {
@@ -342,24 +351,66 @@ img {
     margin-left: 45px;
   }
 }
+@media (min-width: 1200px) {
+  .page-footer__social {
+    margin-left: 95px;
+  }
+}
 .page-footer__social--logo {
   height: 30px;
   width: auto;
 }
+.page-footer__social--show-on-tablet-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .page-footer__social--show-on-tablet-only {
+    display: flex;
+    transform: translateX(-90px);
+  }
+}
+@media (min-width: 1200px) {
+  .page-footer__social--show-on-tablet-only {
+    display: none;
+  }
+}
+.page-footer__social--show-on-mobile-desktop {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .page-footer__social--show-on-mobile-desktop {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .page-footer__social--show-on-mobile-desktop {
+    display: flex;
+  }
+}
 .page-footer__contacts {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .page-footer__contacts {
     flex-direction: row;
-    justify-content: space-start;
   }
 }
 @media (min-width: 768px) {
   .page-footer__contacts--card {
-    padding-right: 60px;
+    min-width: 220px;
+  }
+  .page-footer__contacts--card-gutter {
+    margin-right: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .page-footer__contacts--card {
     width: 260px;
+  }
+  .page-footer__contacts--card-gutter {
+    margin-right: 20px;
   }
 }
 @media (min-width: 768px) {
