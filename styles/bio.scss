@@ -176,22 +176,31 @@ a {
 }
 
 .hero {
-    padding: 0;
-    background-image: url('/assets/images/hero-bio.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 300px;
-    @include tablet {
-        height: 500px;
+    &--dark-foreground {
+        padding: 0;
+        background: rgba(0, 0, 0, 0.4);
     }
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    &--img-background {
+        background-image: url('/assets/images/hero-bio.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        @include tablet {
+            height: 500px;
+        }
+    }
+    // filter: brightness(0.5);
+
     &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 24px;
         color: white;
-        height: auto;
+        height: 300px;
         @include tablet {
+            height: 500px;
             @include tablet-padding;
         }
 
