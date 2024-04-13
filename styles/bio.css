@@ -200,7 +200,7 @@ a {
   background: rgba(32, 32, 32, 0.5);
 }
 .hero--img-background {
-  background-image: url("/assets/images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   width: 100%;
   height: 300px;
