@@ -1,7 +1,7 @@
 //bio.css and bio.css.map have been gitignored
 
-@use './font-styles' as *;
-@use './variables' as *;
+@use './partials/font-styles' as *;
+@use './partials/variables' as *;
 
 @font-face {
     font-family: 'Avenir';
