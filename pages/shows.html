@@ -3,7 +3,194 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bandsite Shows</title>
+        <link rel="stylesheet" href="../styles/bio.css" />
+        <title>Bandsite Bio</title>
     </head>
-    <body></body>
+    <body>
+        <header class="page-header">
+            <article class="page-header__wrapper">
+                <a href="../index.html">
+                    <img
+                        class="page-header__logo"
+                        src="./assets/logos/Logo-bandsite.svg"
+                    />
+                </a>
+                <div class="page-header__gutter"></div>
+                <nav class="page-header__nav">
+                    <p class="page-header__nav--link page-header__nav--active">
+                        <a href="../index.html">Biography</a>
+                    </p>
+
+                    <p class="page-header__nav--link">
+                        <a href="./shows.html">Shows</a>
+                    </p>
+                </nav>
+            </article>
+        </header>
+
+        <iframe
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1754871084&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <div
+            style="
+                font-size: 10px;
+                color: #cccccc;
+                line-break: anywhere;
+                word-break: normal;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                font-weight: 100;
+            "
+        >
+            <a
+                href="https://soundcloud.com/iamtchami"
+                title="Tchami"
+                target="_blank"
+                style="color: #cccccc; text-decoration: none"
+                >Tchami</a
+            >
+            ·
+            <a
+                href="https://soundcloud.com/iamtchami/nineteen-84"
+                title="Nineteen 84"
+                target="_blank"
+                style="color: #cccccc; text-decoration: none"
+                >Nineteen 84</a
+            >
+        </div>
+        <footer class="page-footer">
+            <div class="page-footer__header">
+                <!-- header title and social have unique margins together for desktop -->
+                <!-- for mobile/desktop, header title and social logos must be paired -->
+                <div class="page-footer__header-social-pair">
+                    <h3>Get in Touch</h3>
+                    <!-- DESKTOP: alignment for desktop is unique. desktop socials must be aligned relative "Get in touch" title. 
+                        hide the below social logos in tablet -->
+                    <section
+                        class="page-footer__social page-footer__social--show-on-mobile-desktop"
+                    >
+                        <a href="https://www.instagram.com/">
+                            <img
+                                class="page-footer__social--logo"
+                                src="./assets/icons/Icon-instagram.svg"
+                                alt="Instagram"
+                            />
+                        </a>
+                        <a href="https://www.facebook.com">
+                            <img
+                                class="page-footer__social--logo"
+                                src="./assets/icons/Icon-facebook.svg"
+                                alt="facebook"
+                            />
+                        </a>
+
+                        <a href="https://twitter.com/?lang=en">
+                            <img
+                                class="page-footer__social--logo"
+                                src="./assets/icons/Icon-twitter.svg"
+                                alt="twitter"
+                            />
+                        </a>
+                    </section>
+                </div>
+
+                <!-- TABLET: alignment for tablet is unique. tablet socials must be centered. 
+                    hide the above social logos in tablet -->
+                <section
+                    class="page-footer__social page-footer__social--show-on-tablet-only"
+                >
+                    <a href="https://www.instagram.com/">
+                        <img
+                            class="page-footer__social--logo"
+                            src="./assets/icons/Icon-instagram.svg"
+                            alt="Instagram"
+                        />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img
+                            class="page-footer__social--logo"
+                            src="./assets/icons/Icon-facebook.svg"
+                            alt="facebook"
+                        />
+                    </a>
+
+                    <a href="https://twitter.com/?lang=en">
+                        <img
+                            class="page-footer__social--logo"
+                            src="./assets/icons/Icon-twitter.svg"
+                            alt="twitter"
+                        />
+                    </a>
+                </section>
+                <!-- DESKTOP/MOBILE: toggle "Bandsite" on in tablet/desktop, off in mobile -->
+                <a href="./index.html">
+                    <img
+                        class="bandsite--logo page-footer__bandsite--tablet-desktop"
+                        src="assets/logos/Logo-bandsite.svg"
+                    />
+                </a>
+            </div>
+
+            <div class="page-footer__contacts">
+                <section
+                    class="page-footer__contacts--card page-footer__contacts--card-gutter"
+                >
+                    <h5>The Bees Knees Management</h5>
+                    <p>
+                        503 Broadway Penthouse, <br />
+                        New York, NY 10012, USA
+                    </p>
+                    <a href="mailto:info@thebeesknees.com"
+                        ><p>info@thebeesknees.com</p></a
+                    >
+                </section>
+
+                <section
+                    class="page-footer__contacts--card page-footer__contacts--card-gutter"
+                >
+                    <h5>Limitless Artist Group</h5>
+                    <p>
+                        Booking Agent for
+                        <br />
+                        US / South America / Japan
+                    </p>
+                    <a href="mailto:bookings@limitlessag.com"
+                        ><p>bookings@limitlessag.com</p></a
+                    >
+                </section>
+
+                <section class="page-footer__contacts--card">
+                    <h5>ARCH Entertainment</h5>
+                    <p>
+                        Booking Agent for
+                        <br />
+                        UK / EU / AU
+                    </p>
+                    <a href="mailto:bookings@archentertainment.com"
+                        ><p>bookings@archentertainment.com</p></a
+                    >
+                </section>
+            </div>
+            <article>
+                <!-- MOBILE: toggle "bandsite" on in mobile, off in tablet/desktop -->
+                <br />
+                <br />
+                <a href="../index.html">
+                    <img
+                        class="bandsite--logo page-footer__bandsite--mobile"
+                        src="assets/logos/Logo-bandsite.svg"
+                    />
+                </a>
+                <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
+            </article>
+        </footer>
+    </body>
 </html>

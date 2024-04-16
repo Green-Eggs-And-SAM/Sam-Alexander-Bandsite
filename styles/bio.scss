@@ -22,6 +22,7 @@
 }
 
 * {
+    // border: 1px dotted green;
     box-sizing: border-box;
 } /*# sourceMappingURL=bio.css.map */
 
@@ -205,7 +206,7 @@ a {
         flex-direction: column;
         justify-content: center;
         color: $white;
-        padding: 24px;
+        padding: $mobile-padding;
         height: 300px;
         margin: 0;
         z-index: 10;
@@ -221,7 +222,7 @@ a {
 }
 
 .about {
-    padding: 24px;
+    padding: $mobile-padding;
     color: $bandsite-black;
     @include tablet {
         @include tablet-padding;
@@ -257,7 +258,7 @@ a {
 }
 
 .photo-gallery {
-    padding: 24px;
+    padding: $mobile-padding;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -297,11 +298,65 @@ a {
     }
 }
 
+.comments-section {
+    padding: $mobile-padding;
+    color: $bandsite-black;
+
+    @include tablet {
+        @include tablet-padding;
+    }
+
+    @include desktop {
+        @include desktop-padding;
+    }
+    display: flex;
+    flex-direction: column;
+    &__user {
+        padding: 1rem;
+        &-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 500px;
+        }
+    }
+
+    &__submission {
+        @include tablet {
+            @include comments-padding;
+        }
+        display: flex;
+        flex-direction: row;
+        &-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            &--input {
+                border: 2px solid grey;
+                border-radius: 3px;
+                &-name {
+                    height: 3rem;
+                }
+
+                &-comment {
+                    height: 7rem;
+                }
+            }
+        }
+    }
+
+    &__dividing-line {
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid grey;
+    }
+}
+
 .page-footer {
     color: white;
     background-color: $bandsite-black;
     width: 100%;
-    padding: 24px;
+    padding: $mobile-padding;
     @include tablet {
         @include tablet-padding;
     }

@@ -1,3 +1,5 @@
+$mobile-padding: 1.5rem;
+
 $tablet-width: 768px;
 $desktop-width: 1200px;
 
@@ -26,6 +28,11 @@ $desktop-width: 1200px;
 @mixin tablet-padding--narrow {
     padding-left: 56px;
     padding-right: 56px;
+}
+
+@mixin comments-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 //colors-primary
