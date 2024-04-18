@@ -22,7 +22,7 @@
 }
 
 * {
-    // border: 1px dotted green;
+    border: 1px dotted green;
     box-sizing: border-box;
 } /*# sourceMappingURL=bio.css.map */
 
@@ -54,6 +54,7 @@ h2 {
 h3 {
     font-family: 'Avenir';
     font-weight: 600;
+
     @include Subheader-Font__Mobile;
     @include tablet {
         @include Subheader-Font__Desktop-Tablet;
@@ -298,6 +299,11 @@ a {
     }
 }
 
+#array-of-all-comments {
+    display: flex;
+    flex-direction: column;
+}
+
 .comments-section {
     padding: $mobile-padding;
     color: $bandsite-black;
@@ -312,12 +318,13 @@ a {
     display: flex;
     flex-direction: column;
     &__user {
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 0;
         &-icon {
             width: 60px;
             height: 60px;
             object-fit: cover;
-            border-radius: 500px;
+            border-radius: 60px;
+            background-color: gray;
         }
     }
 
@@ -327,6 +334,7 @@ a {
         }
         display: flex;
         flex-direction: row;
+
         &-form {
             width: 100%;
             display: flex;
@@ -345,9 +353,35 @@ a {
         }
     }
 
+    &__user-comment {
+        @include tablet {
+            @include comments-padding;
+        }
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        margin: 0px;
+        &--container {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        &--name-date-row {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 0;
+        }
+        &--name-date-row * {
+            margin: 0;
+        }
+    }
+
     &__dividing-line {
-        padding-top: 2rem;
-        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
         border-bottom: 2px solid grey;
     }
 }

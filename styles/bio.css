@@ -14,6 +14,7 @@
   font-weight: 700;
 }
 * {
+  border: 1px dotted green;
   box-sizing: border-box;
 } 
 body {
@@ -317,6 +318,11 @@ a {
   filter: grayscale(0);
 }
 
+#array-of-all-comments {
+  display: flex;
+  flex-direction: column;
+}
+
 .comments-section {
   padding: 1.5rem;
   color: #323232;
@@ -336,14 +342,15 @@ a {
   }
 }
 .comments-section__user {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
 }
 .comments-section__user-icon {
   width: 60px;
   height: 60px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 500px;
+  border-radius: 60px;
+  background-color: gray;
 }
 .comments-section__submission {
   display: flex;
@@ -370,9 +377,36 @@ a {
 .comments-section__submission-form--input-comment {
   height: 7rem;
 }
+.comments-section__user-comment {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .comments-section__user-comment {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+.comments-section__user-comment--container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.comments-section__user-comment--name-date-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0;
+}
+.comments-section__user-comment--name-date-row * {
+  margin: 0;
+}
 .comments-section__dividing-line {
-  padding-top: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   border-bottom: 2px solid grey;
 }
 

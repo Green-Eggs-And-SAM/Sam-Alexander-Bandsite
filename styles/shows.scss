@@ -1,0 +1,106 @@
+@use './partials/font-styles' as *;
+@use './partials/variables' as *;
+
+.regular-text {
+    font-weight: 400;
+}
+
+.demibold-text {
+    font-weight: 600;
+}
+
+.shows {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    @include tablet {
+        @include tablet-padding;
+    }
+    @include desktop {
+        flex-direction: row;
+        @include desktop-padding;
+    }
+
+    &__header {
+        padding: $mobile-padding;
+        margin: 0;
+    }
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__card {
+        padding: $mobile-padding;
+        border-bottom: 2px solid $mercury;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            @include tablet-padding;
+
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include desktop {
+            padding: 0 0 0 2rem;
+        }
+        margin: 0;
+
+        &--info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem 0;
+        }
+
+        &--text {
+            padding: 0.4rem 0;
+            margin: 0;
+            font-weight: 400;
+        }
+        &--subheader {
+            @include tablet {
+                display: none;
+            }
+            padding: 0.4rem 0;
+            margin: 0;
+            font-weight: 700;
+            color: $silver;
+            &-tablet {
+                display: none;
+                @include tablet {
+                    width: 100%;
+                    display: flex;
+                    font-weight: 700;
+                    color: $silver;
+                }
+
+                &-empty {
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+    &__get-tix-button {
+        border-radius: 4px;
+        background-color: $bandsite-black;
+        color: white;
+        padding: 1rem;
+        width: 100%;
+        // @include tablet {
+        //     width: auto;
+        // }
+        &--text {
+            width: auto;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.bold-text {
+    font-weight: 700;
+}

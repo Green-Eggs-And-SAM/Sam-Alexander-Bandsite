@@ -126,11 +126,14 @@
 
         <section class="comments-section">
             <h2>Join the Conversation</h2>
-            <article class="comments-section__submission">
+            <article
+                class="comments-section__submission comments-section__dividing-line"
+            >
                 <div class="comments-section__user">
                     <img
                         class="comments-section__user-icon"
                         src="./assets/images/Mohan-muruge.jpg"
+                        alt="default icon"
                     />
                 </div>
                 <div class="comments-section__submission-form">
@@ -147,7 +150,38 @@
                 </div>
                 <br />
             </article>
-            <div class="comments-section__dividing-line"></div>
+            <!-- <div class="comments-section__dividing-line"></div> -->
+
+            <!-- Display all user comments -->
+            <section id="array-of-all-comments">
+                <article
+                    class="comments-section__user-comment comments-section__dividing-line"
+                >
+                    <!-- <img
+                class="comments-section__user-icon"
+                src="./assets/images/Mohan-muruge.jpg"
+            /> -->
+                    <div class="comments-section__user">
+                        <div class="comments-section__user-icon"></div>
+                    </div>
+
+                    <section class="comments-section__user-comment--container">
+                        <div
+                            class="comments-section__user-comment--name-date-row"
+                        >
+                            <h3>user name</h3>
+                            <p>11/12/23</p>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quas sed, et laborum quae adipisci, asperiores
+                            suscipit ipsum modi totam ratione vel nemo deserunt!
+                            Nostrum dolorem minus, possimus nihil nesciunt
+                            earum.
+                        </p>
+                    </section>
+                </article>
+            </section>
         </section>
 
         <footer class="page-footer">
