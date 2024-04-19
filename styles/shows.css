@@ -6,6 +6,10 @@
   font-weight: 600;
 }
 
+iframe {
+  width: 50%;
+}
+
 .shows {
   display: flex;
   flex-direction: column;
@@ -89,6 +93,12 @@
 }
 .shows__card--subheader-tablet-empty {
   margin: 1rem;
+}
+.shows__card:hover {
+  background-color: red;
+}
+.shows__card--was-clicked {
+  background-color: blue;
 }
 .shows__get-tix-button {
   border-radius: 4px;
