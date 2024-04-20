@@ -1,6 +1,27 @@
+@use './variables' as *;
+
 //FONT SIZES HAVE BEEN PRIORITIZED TO MATCH MOCKUPS
 
-// Desktop and Tables sizes
+//=================== Font Faces ===================
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format('otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
+    font-weight: 700;
+}
+
+//=================== Desktop and Tables sizes ===================
 
 //h1
 @mixin Page-Header-Font__Desktop-Tablet {
@@ -44,7 +65,7 @@
     // font-weight: 400;
 }
 
-// Mobile sizes
+//=================== Mobile sizes ===================
 
 //h1
 @mixin Page-Header-Font__Mobile {
@@ -86,4 +107,67 @@
     font-size: 1.25rem;
     line-height: 28px;
     // font-weight: 400;
+}
+
+//=================== tags ===================
+
+//Page Header
+h1 {
+    font-family: 'Avenir';
+    font-weight: 700;
+    @include Page-Header-Font__Mobile;
+    @include tablet {
+        @include Page-Header-Font__Desktop-Tablet;
+    }
+}
+
+//Section Header
+h2 {
+    font-family: 'Avenir';
+    font-weight: 700;
+    @include Section-Header-Font__Mobile;
+    @include tablet {
+        @include Section-Header-Font__Desktop-Tablet;
+    }
+}
+
+//Sub Header
+h3 {
+    font-family: 'Avenir';
+    font-weight: 600;
+
+    @include Subheader-Font__Mobile;
+    @include tablet {
+        @include Subheader-Font__Desktop-Tablet;
+    }
+}
+
+//Footer Copy
+h4 {
+    font-family: 'Avenir';
+    font-weight: 400;
+    @include Footer-Copy__Mobile;
+    @include tablet {
+        @include Footer-Copy__Desktop-Tablet;
+    }
+}
+
+//Labels and buttons
+h5 {
+    font-family: 'Avenir';
+    font-weight: 600;
+    @include Body-Bold__Mobile;
+    @include tablet {
+        @include Body-Bold__Desktop-Tablet;
+    }
+}
+
+//Body
+p {
+    font-family: 'Avenir';
+    font-weight: 400;
+    @include Body-Copy__Mobile;
+    @include tablet {
+        @include Body-Copy__Desktop-Tablet;
+    }
 }

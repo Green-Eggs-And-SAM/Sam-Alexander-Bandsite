@@ -3,92 +3,14 @@
 @use './partials/font-styles' as *;
 @use './partials/variables' as *;
 
-@font-face {
-    font-family: 'Avenir';
-    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Avenir';
-    src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format('otf');
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Avenir';
-    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
-    font-weight: 700;
-}
-
 * {
     border: 1px dotted green;
     box-sizing: border-box;
+    font-family: sans-serif; // backup/fallback font in case of failed font load
 } /*# sourceMappingURL=bio.css.map */
 
 body {
     margin: 0;
-}
-
-//Page Header
-h1 {
-    font-family: 'Avenir';
-    font-weight: 700;
-    @include Page-Header-Font__Mobile;
-    @include tablet {
-        @include Page-Header-Font__Desktop-Tablet;
-    }
-}
-
-//Section Header
-h2 {
-    font-family: 'Avenir';
-    font-weight: 700;
-    @include Section-Header-Font__Mobile;
-    @include tablet {
-        @include Section-Header-Font__Desktop-Tablet;
-    }
-}
-
-//Sub Header
-h3 {
-    font-family: 'Avenir';
-    font-weight: 600;
-
-    @include Subheader-Font__Mobile;
-    @include tablet {
-        @include Subheader-Font__Desktop-Tablet;
-    }
-}
-
-//Footer Copy
-h4 {
-    font-family: 'Avenir';
-    font-weight: 400;
-    @include Footer-Copy__Mobile;
-    @include tablet {
-        @include Footer-Copy__Desktop-Tablet;
-    }
-}
-
-//Labels and buttons
-h5 {
-    font-family: 'Avenir';
-    font-weight: 600;
-    @include Body-Bold__Mobile;
-    @include tablet {
-        @include Body-Bold__Desktop-Tablet;
-    }
-}
-
-//Body
-p {
-    font-family: 'Avenir';
-    font-weight: 400;
-    @include Body-Copy__Mobile;
-    @include tablet {
-        @include Body-Copy__Desktop-Tablet;
-    }
 }
 
 img {
@@ -318,7 +240,10 @@ a {
     display: flex;
     flex-direction: column;
     &__user {
-        padding: 1rem 1rem 1rem 0;
+        padding: 0rem 1rem 1rem 0;
+        &--default-icon {
+            padding-top: 1rem;
+        }
         &-icon {
             width: 60px;
             height: 60px;
@@ -330,8 +255,19 @@ a {
 
     &__submission {
         @include tablet {
-            @include comments-padding;
+            @include comments-margin;
         }
+
+        @include desktop {
+            @include comments-margin-narrow;
+        }
+        // @include tablet {
+        //     @include tablet-padding--narrow;
+        // }
+
+        // @include desktop {
+        //     @include desktop-padding;
+        // }
         display: flex;
         flex-direction: row;
 
@@ -355,7 +291,10 @@ a {
 
     &__user-comment {
         @include tablet {
-            @include comments-padding;
+            @include comments-margin;
+        }
+        @include desktop {
+            @include comments-margin-narrow;
         }
         display: flex;
         flex-direction: row;

@@ -30,9 +30,14 @@ $desktop-width: 1200px;
     padding-right: 56px;
 }
 
-@mixin comments-padding {
-    padding-left: 4rem;
-    padding-right: 4rem;
+@mixin comments-margin {
+    margin-left: 72px;
+    margin-right: 72px;
+}
+
+@mixin comments-margin-narrow {
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 //colors-primary
