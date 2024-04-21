@@ -133,21 +133,43 @@ let inputForm = document.getElementById('input-form');
 inputForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    //check name and comment field both before returning.
+    let returnNow = false;
     //check valid input
-    if (event.target.userName.value == '') {
-        alert('User name cannot be left blank');
-        return;
+    if (
+        event.target.userName.value == '' ||
+        event.target.userName.value == 'Enter your name'
+    ) {
+        event.target.userName.classList.add(
+            'comments-section__submission-form--error'
+        );
+        returnNow = true;
     }
-    if (event.target.userComment.value == '') {
-        alert('User comment cannot be left blank');
-        return;
+    if (
+        event.target.userComment.value == '' ||
+        event.target.userComment.value == 'Add a new comment'
+    ) {
+        event.target.userComment.classList.add(
+            'comments-section__submission-form--error'
+        );
+        returnNow = true;
+    }
+    //failstate triggere. end now
+    if (returnNow) return;
+    //remove red if input is valid.
+    else {
+        event.target.userName.classList.remove(
+            'comments-section__submission-form--error'
+        );
+        event.target.userComment.classList.remove(
+            'comments-section__submission-form--error'
+        );
     }
     let newComment = new userComment(
         event.target.userName.value,
         event.target.userComment.value
     );
     comments.unshift(newComment);
-    console.log(comments);
     //clear text fields
     event.target.userName.value = '';
     event.target.userComment.value = '';
@@ -155,6 +177,7 @@ inputForm.addEventListener('submit', (event) => {
     displayAllComments();
 });
 
+//clear default text from textbox
 let inputName = document.getElementById('input-name');
 inputName.addEventListener('click', () => {
     if (inputName.value == 'Enter your name') inputName.value = '';

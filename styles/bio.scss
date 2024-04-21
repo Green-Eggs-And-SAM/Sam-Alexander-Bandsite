@@ -24,6 +24,10 @@ a {
 
 button {
     border: none;
+    height: 40px;
+    &:hover {
+        background-color: $bandsite-dark-black;
+    }
 }
 
 .bandsite--logo {
@@ -246,14 +250,21 @@ button {
     &__user {
         padding: 0rem 1rem 1rem 0;
         &--default-icon {
-            padding-top: 3rem;
+            padding-top: 74px;
+            @include tablet {
+                padding-top: 54px;
+            }
         }
         &-icon {
-            width: 60px;
-            height: 60px;
+            width: 36px;
+            height: 36px;
+            @include tablet {
+                width: 48px;
+                height: 48px;
+            }
             object-fit: cover;
-            border-radius: 60px;
-            background-color: gray;
+            border-radius: 50%;
+            background-color: $mercury;
         }
     }
 
@@ -274,7 +285,7 @@ button {
             display: flex;
             flex-direction: column;
             &--input {
-                border: 2px solid grey;
+                border: 1px solid grey;
                 border-radius: 3px;
                 background-color: $alabaster;
 
@@ -301,7 +312,7 @@ button {
                 }
             }
             &--comment-button {
-                padding: 1rem 2rem;
+                // padding: 1rem 2rem;
                 margin-top: 2rem;
                 width: 100%;
                 border-radius: 4px;
@@ -316,6 +327,9 @@ button {
                     padding: 0;
                     margin: 0;
                 }
+            }
+            &--error {
+                border: 1px solid#d22d2d;
             }
         }
     }
@@ -353,7 +367,7 @@ button {
     &__dividing-line {
         padding-bottom: 1rem;
         margin-bottom: 1rem;
-        border-bottom: 2px solid grey;
+        border-bottom: 1px solid $mercury;
     }
 }
 

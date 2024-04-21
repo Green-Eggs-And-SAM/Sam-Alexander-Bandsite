@@ -13,13 +13,13 @@ iframe {
     width: 50%;
 }
 
-.main {
-}
+// .main {
+// }
 
 .shows {
     display: flex;
     flex-direction: column;
-    padding: 2rem 0;
+    // padding: 0rem 0;
     @include tablet {
         @include tablet-padding;
     }
@@ -40,23 +40,25 @@ iframe {
         display: flex;
         flex-direction: column;
     }
-    &__card {
-        padding: $mobile-padding;
-        border-bottom: 2px solid $mercury;
+    &__card,
+    &__card-header {
+        // padding: $mobile-padding;
+        padding: 16px;
+        border-bottom: 1px solid $mercury;
         display: flex;
         flex-direction: column;
 
         @include tablet {
-            @include tablet-padding;
-
+            // @include tablet-padding;
+            padding: 24px 18px;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
         }
 
-        @include desktop {
-            padding: 0 0 0 2rem;
-        }
+        // @include desktop {
+        //     padding: 0 0 0 2rem;
+        // }
         margin: 0;
 
         &--info {
@@ -93,20 +95,16 @@ iframe {
                 }
             }
         }
-
-        &:hover {
-            background-color: red;
-        }
-
-        &--was-clicked {
-            background-color: blue;
-        }
     }
+    &__card:hover {
+        background-color: $alabaster;
+    }
+
     &__get-tix-button {
         border-radius: 4px;
         background-color: $bandsite-black;
         color: white;
-        padding: 1rem;
+        // padding: 1rem;
         width: 100%;
         // @include tablet {
         //     width: auto;
@@ -123,6 +121,6 @@ iframe {
     font-weight: 700;
 }
 
-.clicked-show {
-    background-color: green;
+.selected {
+    background-color: $mercury;
 }

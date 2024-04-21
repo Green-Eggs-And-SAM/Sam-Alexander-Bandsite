@@ -110,6 +110,10 @@ a {
 
 button {
   border: none;
+  height: 40px;
+}
+button:hover {
+  background-color: #000;
 }
 
 .bandsite--logo {
@@ -349,15 +353,26 @@ button {
   padding: 0rem 1rem 1rem 0;
 }
 .comments-section__user--default-icon {
-  padding-top: 3rem;
+  padding-top: 74px;
+}
+@media (min-width: 768px) {
+  .comments-section__user--default-icon {
+    padding-top: 54px;
+  }
 }
 .comments-section__user-icon {
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 60px;
-  background-color: gray;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .comments-section__user-icon {
+    width: 48px;
+    height: 48px;
+  }
 }
 .comments-section__submission {
   display: flex;
@@ -381,7 +396,7 @@ button {
   flex-direction: column;
 }
 .comments-section__submission-form--input {
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 3px;
   background-color: #fafafa;
   font-family: "Avenir";
@@ -409,7 +424,6 @@ button {
   }
 }
 .comments-section__submission-form--comment-button {
-  padding: 1rem 2rem;
   margin-top: 2rem;
   width: 100%;
   border-radius: 4px;
@@ -425,6 +439,9 @@ button {
   width: auto;
   padding: 0;
   margin: 0;
+}
+.comments-section__submission-form--error {
+  border: 1px solid #d22d2d;
 }
 .comments-section__user-comment {
   display: flex;
@@ -463,7 +480,7 @@ button {
 .comments-section__dividing-line {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .page-footer {

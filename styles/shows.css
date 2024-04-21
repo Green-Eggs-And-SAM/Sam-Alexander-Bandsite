@@ -106,7 +106,6 @@ iframe {
 .shows {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
 }
 @media (min-width: 768px) {
   .shows {
@@ -135,74 +134,64 @@ iframe {
   display: flex;
   flex-direction: column;
 }
-.shows__card {
-  padding: 1.5rem;
-  border-bottom: 2px solid #e1e1e1;
+.shows__card, .shows__card-header {
+  padding: 16px;
+  border-bottom: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
   margin: 0;
 }
 @media (min-width: 768px) {
-  .shows__card {
-    padding-left: 72px;
-    padding-right: 72px;
+  .shows__card, .shows__card-header {
+    padding: 24px 18px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 }
-@media (min-width: 1200px) {
-  .shows__card {
-    padding: 0 0 0 2rem;
-  }
-}
-.shows__card--info {
+.shows__card--info, .shows__card-header--info {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 0.25rem 0;
 }
-.shows__card--text {
+.shows__card--text, .shows__card-header--text {
   padding: 0.4rem 0;
   margin: 0;
   font-weight: 400;
 }
-.shows__card--subheader {
+.shows__card--subheader, .shows__card-header--subheader {
   padding: 0.4rem 0;
   margin: 0;
   font-weight: 700;
   color: #afafaf;
 }
 @media (min-width: 768px) {
-  .shows__card--subheader {
+  .shows__card--subheader, .shows__card-header--subheader {
     display: none;
   }
 }
-.shows__card--subheader-tablet {
+.shows__card--subheader-tablet, .shows__card-header--subheader-tablet {
   display: none;
 }
 @media (min-width: 768px) {
-  .shows__card--subheader-tablet {
+  .shows__card--subheader-tablet, .shows__card-header--subheader-tablet {
     width: 100%;
     display: flex;
     font-weight: 700;
     color: #afafaf;
   }
 }
-.shows__card--subheader-tablet-empty {
+.shows__card--subheader-tablet-empty, .shows__card-header--subheader-tablet-empty {
   margin: 0.8rem;
 }
 .shows__card:hover {
-  background-color: red;
-}
-.shows__card--was-clicked {
-  background-color: blue;
+  background-color: #fafafa;
 }
 .shows__get-tix-button {
   border-radius: 4px;
   background-color: #323232;
   color: white;
-  padding: 1rem;
   width: 100%;
 }
 .shows__get-tix-button--text {
@@ -215,6 +204,6 @@ iframe {
   font-weight: 700;
 }
 
-.clicked-show {
-  background-color: green;
+.selected {
+  background-color: #e1e1e1;
 }/*# sourceMappingURL=shows.css.map */

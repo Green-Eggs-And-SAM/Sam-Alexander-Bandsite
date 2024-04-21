@@ -130,10 +130,10 @@ let highlightedShow = undefined;
 
 //highlihgt current clicked show. remove highlight on previous clicked show.
 function highlight(showsCard) {
-    //highlight show
-    showsCard.classList.add('clicked-show');
     //remove the previous highlight and replace with the current highlighted show.
     if (highlightedShow != undefined)
-        highlightedShow.classList.remove('clicked-show');
+        highlightedShow.classList.remove('selected');
     highlightedShow = showsCard;
+    //highlight show
+    showsCard.classList.add('selected');
 }
