@@ -13,6 +13,9 @@ iframe {
     width: 50%;
 }
 
+.main {
+}
+
 .shows {
     display: flex;
     flex-direction: column;
@@ -28,6 +31,9 @@ iframe {
     &__header {
         padding: $mobile-padding;
         margin: 0;
+        @include tablet {
+            padding: 0.5rem 2rem 2rem 0;
+        }
     }
     &__list {
         width: 100%;
@@ -115,4 +121,8 @@ iframe {
 
 .bold-text {
     font-weight: 700;
+}
+
+.clicked-show {
+    background-color: green;
 }

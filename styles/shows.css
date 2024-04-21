@@ -125,6 +125,11 @@ iframe {
   padding: 1.5rem;
   margin: 0;
 }
+@media (min-width: 768px) {
+  .shows__header {
+    padding: 0.5rem 2rem 2rem 0;
+  }
+}
 .shows__list {
   width: 100%;
   display: flex;
@@ -208,4 +213,8 @@ iframe {
 
 .bold-text {
   font-weight: 700;
+}
+
+.clicked-show {
+  background-color: green;
 }/*# sourceMappingURL=shows.css.map */

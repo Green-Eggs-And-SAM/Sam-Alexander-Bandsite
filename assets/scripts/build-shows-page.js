@@ -40,6 +40,7 @@ function displayShows() {
 
 function createShowCard(showToAdd) {
     let show = document.createElement('article');
+    show.addEventListener('click', clicked);
 
     let newDateInfo = createInfoDiv('DATE', showToAdd.date, true);
     // console.log(newInfo.innerHTML);
@@ -53,6 +54,7 @@ function createShowCard(showToAdd) {
     show.classList.add('shows__card');
 
     let newButton = createButton();
+
     show.appendChild(newButton);
     return show;
 }
@@ -97,7 +99,41 @@ function createNewTextElement(tag, classes, contentText) {
     return newEl;
 }
 
-document.body.addEventListener('click', function (event) {
-    var clickedElement = event.target;
-    console.log(clickedElement);
-});
+// document.body.addEventListener('click', function (event) {
+//     var clickedElement = event.target;
+//     console.log(clickedElement);
+// });
+
+function clicked(event) {
+    //find the grandparent node containing the class shows card.
+    //user may have clicked on the either the grandparent, parent or child element
+    //keep checking parent elements until the correct element is found.
+    let parent = event.target.parentNode;
+    let grandParent = parent.parentNode;
+
+    //user clicked on shows__card grandparent
+    if (event.target.classList.contains('shows__card')) {
+        highlight(event.target);
+    }
+    //user clicked on child of shows__card. check parent
+    else if (parent.classList.contains('shows__card')) {
+        highlight(parent);
+    }
+    //user clicked on grandchild of shows__card. check grandparent
+    else if (grandParent.classList.contains('shows__card')) {
+        highlight(grandParent);
+    }
+}
+
+//store the current element that is highlighted.
+let highlightedShow = undefined;
+
+//highlihgt current clicked show. remove highlight on previous clicked show.
+function highlight(showsCard) {
+    //highlight show
+    showsCard.classList.add('clicked-show');
+    //remove the previous highlight and replace with the current highlighted show.
+    if (highlightedShow != undefined)
+        highlightedShow.classList.remove('clicked-show');
+    highlightedShow = showsCard;
+}
