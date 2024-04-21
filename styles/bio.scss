@@ -4,7 +4,7 @@
 @use './partials/variables' as *;
 
 * {
-    border: 1px dotted green;
+    // border: 1px dotted green;
     box-sizing: border-box;
     font-family: sans-serif; // backup/fallback font in case of failed font load
 } /*# sourceMappingURL=bio.css.map */
@@ -242,7 +242,7 @@ a {
     &__user {
         padding: 0rem 1rem 1rem 0;
         &--default-icon {
-            padding-top: 1rem;
+            padding-top: 3rem;
         }
         &-icon {
             width: 60px;
@@ -261,13 +261,7 @@ a {
         @include desktop {
             @include comments-margin-narrow;
         }
-        // @include tablet {
-        //     @include tablet-padding--narrow;
-        // }
 
-        // @include desktop {
-        //     @include desktop-padding;
-        // }
         display: flex;
         flex-direction: row;
 
@@ -278,12 +272,45 @@ a {
             &--input {
                 border: 2px solid grey;
                 border-radius: 3px;
+                background-color: $alabaster;
+
+                font-family: 'Avenir';
+                font-weight: 400;
+                @include Body-Copy__Mobile;
+                @include tablet {
+                    @include Body-Copy__Desktop-Tablet;
+                }
                 &-name {
                     height: 3rem;
                 }
 
                 &-comment {
                     height: 7rem;
+                }
+            }
+
+            &--container-row {
+                @include tablet {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
+            }
+            &--comment-button {
+                padding: 1rem 2rem;
+                margin-top: 2rem;
+                width: 100%;
+                border-radius: 4px;
+                background-color: $bandsite-black;
+                color: white;
+
+                @include tablet {
+                    width: 35%;
+                }
+                & h5 {
+                    width: auto;
+                    padding: 0;
+                    margin: 0;
                 }
             }
         }
@@ -304,6 +331,7 @@ a {
             display: flex;
             flex-direction: column;
             margin: 0;
+            width: 100%;
         }
 
         &--name-date-row {

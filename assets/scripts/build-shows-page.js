@@ -96,3 +96,8 @@ function createNewTextElement(tag, classes, contentText) {
 
     return newEl;
 }
+
+document.body.addEventListener('click', function (event) {
+    var clickedElement = event.target;
+    console.log(clickedElement);
+});

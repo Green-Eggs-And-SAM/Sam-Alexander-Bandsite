@@ -20,25 +20,34 @@ let comments = [
 ];
 
 class userComment {
-    constructor(name, comment, timeStamp) {
-        this.name = name;
+    constructor(name, comment) {
+        this.userName = name;
+        this.date = getTodaysDate();
         this.comment = comment;
-        this.timeStamp = timeStamp;
     }
 }
 
 const commentList = document.getElementById('array-of-all-comments');
+displayAllComments(); // display default comments
+// commentList.append(createNewComment(comments[0]));
+// removeAllComments();
+console.log(getTodaysDate());
 
-commentList.append(createNewComment(comments[0]));
-removeAllComments();
-console.log();
-
-function submitComment() {}
+function submitComment(event) {
+    event.preventDefault();
+}
 
 function removeAllComments() {
     while (commentList.firstChild) {
         commentList.firstChild.remove();
     }
+}
+
+function displayAllComments() {
+    removeAllComments();
+    comments.forEach((comment) =>
+        commentList.append(createNewComment(comment))
+    );
 }
 
 function createNewComment(commentData) {
@@ -68,7 +77,7 @@ function createNewComment(commentData) {
     //make comment body
     let body = createCommentBody(commentData);
     entireComment.appendChild(body);
-    console.log(entireComment.innerHTML);
+    // console.log(entireComment.innerHTML);
     return entireComment;
 }
 
@@ -102,13 +111,11 @@ function createNewElement(tag, classes, contentText) {
     if (classes != undefined) newEl.classList.add(classes);
     return newEl;
 }
-console.log(timestampToDate());
+console.log(getTodaysDate());
 // Assuming timestamp is in milliseconds
-function timestampToDate() {
-    // Create a new Date object with the timestamp
+function getTodaysDate() {
     let date = new Date();
 
-    // Extract the components of the date
     let year = date.getFullYear();
     let month = date.getMonth() + 1; // Month starts at 0, so we add 1
     let day = date.getDate();
@@ -121,3 +128,39 @@ function addZero(number) {
     if (number < 10) return '0' + number;
     else return number;
 }
+
+let inputForm = document.getElementById('input-form');
+inputForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    //check valid input
+    if (event.target.userName.value == '') {
+        alert('User name cannot be left blank');
+        return;
+    }
+    if (event.target.userComment.value == '') {
+        alert('User comment cannot be left blank');
+        return;
+    }
+    let newComment = new userComment(
+        event.target.userName.value,
+        event.target.userComment.value
+    );
+    comments.unshift(newComment);
+    console.log(comments);
+    //clear text fields
+    event.target.userName.value = '';
+    event.target.userComment.value = '';
+
+    displayAllComments();
+});
+
+let inputName = document.getElementById('input-name');
+inputName.addEventListener('click', () => {
+    if (inputName.value == 'Enter your name') inputName.value = '';
+});
+
+let inputComment = document.getElementById('input-comment');
+inputComment.addEventListener('click', () => {
+    if (inputComment.value == 'Add a new comment') inputComment.value = '';
+});

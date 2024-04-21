@@ -126,8 +126,9 @@
 
         <section class="comments-section">
             <h2>Join the Conversation</h2>
-            <article
+            <form
                 class="comments-section__submission comments-section__dividing-line"
+                id="input-form"
             >
                 <div
                     class="comments-section__user comments-section__user--default-icon"
@@ -143,20 +144,39 @@
                     <input
                         class="comments-section__submission-form--input comments-section__submission-form--input-name"
                         type="text"
+                        name="userName"
+                        value="Enter your name"
+                        id="input-name"
                     />
                     <p>COMMENT</p>
-                    <input
+                    <textarea
                         type="text"
                         class="comments-section__submission-form--input comments-section__submission-form--input-comment"
-                    />
+                        name="userComment"
+                        value="Add a new comment"
+                        id="input-comment"
+                    >
+Add a new comment</textarea
+                    >
+                    <div
+                        class="comments-section__submission-form--container-row"
+                    >
+                        <button
+                            class="comments-section__submission-form--comment-button"
+                            type="submit"
+                        >
+                            <h5>COMMENT</h5>
+                        </button>
+                    </div>
                 </div>
+
                 <br />
-            </article>
+            </form>
             <!-- <div class="comments-section__dividing-line"></div> -->
 
             <!-- Display all user comments -->
             <section id="array-of-all-comments">
-                <article
+                <!-- <article
                     class="comments-section__user-comment comments-section__dividing-line"
                 >
                     <div class="comments-section__user">
@@ -178,7 +198,7 @@
                             earum.
                         </p>
                     </section>
-                </article>
+                </article> -->
             </section>
         </section>
 

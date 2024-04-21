@@ -92,7 +92,6 @@ p {
 }
 
 * {
-  border: 1px dotted green;
   box-sizing: border-box;
   font-family: sans-serif;
 } 
@@ -346,7 +345,7 @@ a {
   padding: 0rem 1rem 1rem 0;
 }
 .comments-section__user--default-icon {
-  padding-top: 1rem;
+  padding-top: 3rem;
 }
 .comments-section__user-icon {
   width: 60px;
@@ -380,12 +379,48 @@ a {
 .comments-section__submission-form--input {
   border: 2px solid grey;
   border-radius: 3px;
+  background-color: #fafafa;
+  font-family: "Avenir";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 28px;
+}
+@media (min-width: 768px) {
+  .comments-section__submission-form--input {
+    font-size: 1rem;
+    line-height: 22px;
+  }
 }
 .comments-section__submission-form--input-name {
   height: 3rem;
 }
 .comments-section__submission-form--input-comment {
   height: 7rem;
+}
+@media (min-width: 768px) {
+  .comments-section__submission-form--container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+.comments-section__submission-form--comment-button {
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #323232;
+  color: white;
+}
+@media (min-width: 768px) {
+  .comments-section__submission-form--comment-button {
+    width: 35%;
+  }
+}
+.comments-section__submission-form--comment-button h5 {
+  width: auto;
+  padding: 0;
+  margin: 0;
 }
 .comments-section__user-comment {
   display: flex;
@@ -409,6 +444,7 @@ a {
   display: flex;
   flex-direction: column;
   margin: 0;
+  width: 100%;
 }
 .comments-section__user-comment--name-date-row {
   display: flex;
