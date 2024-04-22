@@ -81,6 +81,7 @@ function createNewComment(commentData) {
     return entireComment;
 }
 
+//create all the divs, subheaders and text.
 function createCommentBody(commentData) {
     let container = createNewElement(
         'section',
@@ -104,6 +105,7 @@ function createCommentHeader(commentData) {
     return header;
 }
 
+//make code more DRY by feeding in tag, classes and content text and return an element.
 function createNewElement(tag, classes, contentText) {
     if (tag == undefined) console.log("ERROR Tag can't be null");
     let newEl = document.createElement(tag);
@@ -111,19 +113,16 @@ function createNewElement(tag, classes, contentText) {
     if (classes != undefined) newEl.classList.add(classes);
     return newEl;
 }
-console.log(getTodaysDate());
-// Assuming timestamp is in milliseconds
+// return formatted month/day/year string
 function getTodaysDate() {
-    let date = new Date();
-
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1; // Month starts at 0, so we add 1
-    let day = date.getDate();
-
-    return year + '/' + addZero(month) + '/' + addZero(day);
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = addZero(today.getMonth() + 1);
+    let day = addZero(today.getDate());
+    return month + '/' + day + '/' + year;
 }
 
-// add leading 0 if month or day is less than 2 digits.
+// add leading 0 if month or day is only 1 digit.
 function addZero(number) {
     if (number < 10) return '0' + number;
     else return number;
@@ -182,7 +181,7 @@ let inputName = document.getElementById('input-name');
 inputName.addEventListener('click', () => {
     if (inputName.value == 'Enter your name') inputName.value = '';
 });
-
+//clear default text from textbox
 let inputComment = document.getElementById('input-comment');
 inputComment.addEventListener('click', () => {
     if (inputComment.value == 'Add a new comment') inputComment.value = '';

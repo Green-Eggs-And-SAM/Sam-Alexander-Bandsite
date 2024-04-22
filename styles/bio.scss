@@ -250,9 +250,9 @@ button {
     &__user {
         padding: 0rem 1rem 1rem 0;
         &--default-icon {
-            padding-top: 74px;
+            padding-top: 58px;
             @include tablet {
-                padding-top: 54px;
+                padding-top: 42px;
             }
         }
         &-icon {
@@ -280,12 +280,16 @@ button {
         display: flex;
         flex-direction: row;
 
+        &--label {
+            color: $mercury;
+            margin-bottom: 4px;
+        }
         &-form {
             width: 100%;
             display: flex;
             flex-direction: column;
             &--input {
-                border: 1px solid grey;
+                border: 1px solid $mercury;
                 border-radius: 3px;
                 background-color: $alabaster;
 
@@ -301,6 +305,9 @@ button {
 
                 &-comment {
                     height: 7rem;
+                }
+                &:focus {
+                    border: 1px solid $bandsite-black;
                 }
             }
 

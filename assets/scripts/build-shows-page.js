@@ -31,24 +31,24 @@ const shows = [
     },
 ];
 
-const insertShowHere = document.getElementById('list-of-shows');
-displayShows();
-
 function displayShows() {
     shows.forEach((show) => insertShowHere.append(createShowCard(show)));
 }
 
+//create a complete card for each show
 function createShowCard(showToAdd) {
     let show = document.createElement('article');
     show.addEventListener('click', clicked);
 
+    //make a date subheader and text pair
     let newDateInfo = createInfoDiv('DATE', showToAdd.date, true);
-    // console.log(newInfo.innerHTML);
     show.appendChild(newDateInfo);
 
+    //make a venue pair
     let newVenueInfo = createInfoDiv('VENUE', showToAdd.venue, false);
     show.appendChild(newVenueInfo);
 
+    //make a location pair
     let newLocationInfo = createInfoDiv('LOCATION', showToAdd.location, false);
     show.appendChild(newLocationInfo);
     show.classList.add('shows__card');
@@ -71,6 +71,7 @@ function createButton() {
     return newButton;
 }
 
+//a pair of both subheader and text body.
 function createInfoDiv(subheaderText, bodyText, isBold) {
     let infoDiv = document.createElement('div');
     infoDiv.classList.add('shows__card--info');
@@ -90,19 +91,20 @@ function createInfoDiv(subheaderText, bodyText, isBold) {
     return infoDiv;
 }
 
+//return a text element complete with tag, class and text
 function createNewTextElement(tag, classes, contentText) {
     let newEl = document.createElement(tag);
 
-    if (contentText != undefined) newEl.textContent = contentText;
-    if (classes != undefined) newEl.classList.add(classes);
+    if (contentText != undefined) {
+        newEl.textContent = contentText;
+    }
+
+    if (classes != undefined) {
+        newEl.classList.add(classes);
+    }
 
     return newEl;
 }
-
-// document.body.addEventListener('click', function (event) {
-//     var clickedElement = event.target;
-//     console.log(clickedElement);
-// });
 
 function clicked(event) {
     //find the grandparent node containing the class shows card.
@@ -125,9 +127,6 @@ function clicked(event) {
     }
 }
 
-//store the current element that is highlighted.
-let highlightedShow = undefined;
-
 //highlihgt current clicked show. remove highlight on previous clicked show.
 function highlight(showsCard) {
     //remove the previous highlight and replace with the current highlighted show.
@@ -137,3 +136,8 @@ function highlight(showsCard) {
     //highlight show
     showsCard.classList.add('selected');
 }
+
+//store the current element that is highlighted.
+let highlightedShow = undefined;
+const insertShowHere = document.getElementById('list-of-shows');
+displayShows();

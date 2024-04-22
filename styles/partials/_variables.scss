@@ -25,6 +25,16 @@ $desktop-width: 1200px;
     padding-right: 72px;
 }
 
+@mixin shows-desktop-padding {
+    padding-left: 120px;
+    padding-right: 102px;
+}
+
+@mixin shows-tablet-padding {
+    padding-left: 54px;
+    padding-right: 54px;
+}
+
 @mixin tablet-padding--narrow {
     padding-left: 56px;
     padding-right: 56px;

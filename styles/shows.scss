@@ -9,30 +9,92 @@
     font-weight: 600;
 }
 
-iframe {
-    width: 50%;
-}
+.shows-hero {
+    display: flex;
+    flex-direction: column;
+    &--img-background {
+        background-image: url('../assets/images/Photo-gallery-3.jpg');
+        background-size: cover;
+        width: 100%;
+        // height: 300px;
+        // @include tablet {
+        //     height: 500px;
+        // }
+    }
 
-// .main {
-// }
+    &--dark-foreground {
+        padding: 2rem 0;
+        @include desktop {
+            padding: 5rem 0;
+        }
+        background: $bandsite-black-transparent;
+    }
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $white;
+        padding: $mobile-padding;
+        // height: 300px;
+        margin: 0;
+        z-index: 10;
+        @include tablet {
+            // height: 500px;
+            @include tablet-padding;
+        }
+
+        @include desktop {
+            @include desktop-padding;
+            padding-right: 0;
+        }
+    }
+
+    &__row-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    &__soundcloud {
+        padding: $mobile-padding;
+        width: 100%;
+        @include tablet {
+            // height: 500px;
+            @include tablet-padding;
+            width: 70%;
+        }
+
+        @include desktop {
+            @include desktop-padding;
+            width: 50%;
+            padding-left: 2rem;
+        }
+    }
+}
 
 .shows {
     display: flex;
     flex-direction: column;
     // padding: 0rem 0;
     @include tablet {
-        @include tablet-padding;
+        @include shows-tablet-padding;
     }
     @include desktop {
         flex-direction: row;
-        @include desktop-padding;
+        @include shows-desktop-padding;
     }
 
     &__header {
         padding: $mobile-padding;
         margin: 0;
         @include tablet {
-            padding: 0.5rem 2rem 2rem 0;
+            padding: 0.5rem 2rem 2rem 18px;
+        }
+
+        @include desktop {
+            padding-left: 0;
+            padding-top: 1.8rem;
         }
     }
     &__list {
@@ -42,8 +104,7 @@ iframe {
     }
     &__card,
     &__card-header {
-        // padding: $mobile-padding;
-        padding: 16px;
+        padding: 1.5rem; // i know the outline said 16px padding for mobile but 1.5 rem kept everything in line. per mockup.
         border-bottom: 1px solid $mercury;
         display: flex;
         flex-direction: column;
