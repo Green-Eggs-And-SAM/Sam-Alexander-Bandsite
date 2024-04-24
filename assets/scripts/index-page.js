@@ -1,41 +1,42 @@
-let comments = [
-    {
-        userName: 'Victor Pinto',
-        date: '11/02/2023',
-        comment:
-            'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-    },
-    {
-        userName: 'Christina Cabrera',
-        date: '10/28/2023',
-        comment:
-            'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
-    },
-    {
-        userName: 'Isaac Tadesse',
-        date: '10/20/2023',
-        comment:
-            "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    },
-];
+import BandSiteApi from './band-site-api.js';
+const api = new BandSiteApi('473e656b-a5a8-4cdf-8ca9-019edb1b076e');
 
-class userComment {
-    constructor(name, comment) {
-        this.userName = name;
-        this.date = getTodaysDate();
-        this.comment = comment;
-    }
-}
+console.log('here');
+console.log(api.getComments());
+// console.log(api.getComments().data);
+
+// let comments = [
+//     {
+//         name: 'Victor Pinto',
+//         timestamp: '11/02/2023',
+//         comment:
+//             'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
+//     },
+//     {
+//         name: 'Christina Cabrera',
+//         timestamp: '10/28/2023',
+//         comment:
+//             'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
+//     },
+//     {
+//         name: 'Isaac Tadesse',
+//         timestamp: '10/20/2023',
+//         comment:
+//             "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//     },
+// ];
+
+// class userComment {
+//     constructor(name, comment) {
+//         this.name = name;
+//         this.timestamp = getTodaysDate();
+//         console.log(this.timestamp);
+//         this.comment = comment;
+//     }
+// }
 
 const commentList = document.getElementById('array-of-all-comments');
 displayAllComments(); // display default comments
-// commentList.append(createNewComment(comments[0]));
-// removeAllComments();
-console.log(getTodaysDate());
-
-function submitComment(event) {
-    event.preventDefault();
-}
 
 function removeAllComments() {
     while (commentList.firstChild) {
@@ -43,15 +44,18 @@ function removeAllComments() {
     }
 }
 
-function displayAllComments() {
+async function displayAllComments() {
     removeAllComments();
+
+    const comments = await api.getComments();
+    console.log(comments);
     comments.forEach((comment) =>
         commentList.append(createNewComment(comment))
     );
 }
 
 function createNewComment(commentData) {
-    console.log('HERE');
+    // console.log(commentData);
     //make parent container
     let entireComment = createNewElement(
         'article',
@@ -98,9 +102,13 @@ function createCommentBody(commentData) {
 function createCommentHeader(commentData) {
     let header = document.createElement('div');
     header.classList.add('comments-section__user-comment--name-date-row');
-    let newUserName = createNewElement('h5', undefined, commentData.userName);
-    header.appendChild(newUserName);
-    let newDate = createNewElement('p', undefined, commentData.date);
+    let newname = createNewElement('h5', undefined, commentData.name);
+    header.appendChild(newname);
+    let newDate = createNewElement(
+        'p',
+        undefined,
+        getTodaysDate(commentData.timestamp)
+    );
     header.appendChild(newDate);
     return header;
 }
@@ -114,8 +122,12 @@ function createNewElement(tag, classes, contentText) {
     return newEl;
 }
 // return formatted month/day/year string
-function getTodaysDate() {
-    let today = new Date();
+function getTodaysDate(timestamp) {
+    let today;
+    //if there is a timestamp then format timestamp to date.
+    if (timestamp) today = new Date(timestamp);
+    //otherwise set current day.
+    else today = new Date();
     let year = today.getFullYear();
     let month = addZero(today.getMonth() + 1);
     let day = addZero(today.getDate());
@@ -157,6 +169,10 @@ inputForm.addEventListener('submit', (event) => {
     if (returnNow) return;
     //remove red if input is valid.
     else {
+        // console.log(event);
+        // console.log(event.target);
+        // console.log(event.target.name);
+        // console.log(event.target.classList);
         event.target.userName.classList.remove(
             'comments-section__submission-form--error'
         );
