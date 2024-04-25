@@ -1,8 +1,8 @@
 import BandSiteApi from './band-site-api.js';
 const api = new BandSiteApi('473e656b-a5a8-4cdf-8ca9-019edb1b076e');
 
-console.log('here');
-console.log(api.getComments());
+// console.log('here');
+// console.log(api.getComments());
 // console.log(api.getComments().data);
 
 // let comments = [
@@ -26,14 +26,14 @@ console.log(api.getComments());
 //     },
 // ];
 
-// class userComment {
-//     constructor(name, comment) {
-//         this.name = name;
-//         this.timestamp = getTodaysDate();
-//         console.log(this.timestamp);
-//         this.comment = comment;
-//     }
-// }
+class newComment {
+    constructor(name, comment) {
+        this.name = name;
+        this.comment = comment;
+        // this.likes = 0;
+        // this.timestamp = Date.now();
+    }
+}
 
 const commentList = document.getElementById('array-of-all-comments');
 displayAllComments(); // display default comments
@@ -122,6 +122,7 @@ function createNewElement(tag, classes, contentText) {
     return newEl;
 }
 // return formatted month/day/year string
+// I did not use toLocaleDateString() becuase that method does not add leading 0 for months and days.
 function getTodaysDate(timestamp) {
     let today;
     //if there is a timestamp then format timestamp to date.
@@ -141,7 +142,7 @@ function addZero(number) {
 }
 
 let inputForm = document.getElementById('input-form');
-inputForm.addEventListener('submit', (event) => {
+inputForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     //check name and comment field both before returning.
@@ -180,15 +181,16 @@ inputForm.addEventListener('submit', (event) => {
             'comments-section__submission-form--error'
         );
     }
-    let newComment = new userComment(
+    let newUserComment = new newComment(
         event.target.userName.value,
         event.target.userComment.value
     );
-    comments.unshift(newComment);
+    // comments.unshift(newComment);
     //clear text fields
     event.target.userName.value = '';
     event.target.userComment.value = '';
-
+    const response = await api.postComment(newUserComment);
+    console.log(response);
     displayAllComments();
 });
 
