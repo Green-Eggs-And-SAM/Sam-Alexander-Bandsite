@@ -369,6 +369,9 @@ button {
         &--name-date-row * {
             margin: 0;
         }
+        &--date {
+            color: $mercury;
+        }
     }
 
     &__dividing-line {

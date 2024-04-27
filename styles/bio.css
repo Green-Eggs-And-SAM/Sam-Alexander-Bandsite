@@ -484,6 +484,9 @@ button:hover {
 .comments-section__user-comment--name-date-row * {
   margin: 0;
 }
+.comments-section__user-comment--date {
+  color: #e1e1e1;
+}
 .comments-section__dividing-line {
   padding-bottom: 1rem;
   margin-bottom: 1rem;

@@ -1,37 +1,10 @@
 import BandSiteApi from './band-site-api.js';
 const api = new BandSiteApi('473e656b-a5a8-4cdf-8ca9-019edb1b076e');
 
-// console.log('here');
-// console.log(api.getComments());
-// console.log(api.getComments().data);
-
-// let comments = [
-//     {
-//         name: 'Victor Pinto',
-//         timestamp: '11/02/2023',
-//         comment:
-//             'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-//     },
-//     {
-//         name: 'Christina Cabrera',
-//         timestamp: '10/28/2023',
-//         comment:
-//             'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
-//     },
-//     {
-//         name: 'Isaac Tadesse',
-//         timestamp: '10/20/2023',
-//         comment:
-//             "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//     },
-// ];
-
 class newComment {
     constructor(name, comment) {
         this.name = name;
         this.comment = comment;
-        // this.likes = 0;
-        // this.timestamp = Date.now();
     }
 }
 
@@ -48,14 +21,13 @@ async function displayAllComments() {
     removeAllComments();
 
     const comments = await api.getComments();
-    console.log(comments);
     comments.forEach((comment) =>
         commentList.append(createNewComment(comment))
     );
 }
 
+//create HTML and add CSS classes to the data
 function createNewComment(commentData) {
-    // console.log(commentData);
     //make parent container
     let entireComment = createNewElement(
         'article',
@@ -81,7 +53,6 @@ function createNewComment(commentData) {
     //make comment body
     let body = createCommentBody(commentData);
     entireComment.appendChild(body);
-    // console.log(entireComment.innerHTML);
     return entireComment;
 }
 
@@ -106,7 +77,7 @@ function createCommentHeader(commentData) {
     header.appendChild(newname);
     let newDate = createNewElement(
         'p',
-        undefined,
+        'comments-section__user-comment--date',
         getTodaysDate(commentData.timestamp)
     );
     header.appendChild(newDate);
@@ -170,10 +141,6 @@ inputForm.addEventListener('submit', async (event) => {
     if (returnNow) return;
     //remove red if input is valid.
     else {
-        // console.log(event);
-        // console.log(event.target);
-        // console.log(event.target.name);
-        // console.log(event.target.classList);
         event.target.userName.classList.remove(
             'comments-section__submission-form--error'
         );
@@ -185,12 +152,11 @@ inputForm.addEventListener('submit', async (event) => {
         event.target.userName.value,
         event.target.userComment.value
     );
-    // comments.unshift(newComment);
+
     //clear text fields
     event.target.userName.value = '';
     event.target.userComment.value = '';
     const response = await api.postComment(newUserComment);
-    console.log(response);
     displayAllComments();
 });
 
